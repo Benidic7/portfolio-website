@@ -1,4 +1,4 @@
-@extends('layouts.web')
+@extends('layouts.portfolio')
 
 @section('content')
     <section class="section-services section-t8">
@@ -40,7 +40,7 @@
                 </a>
                 </li>
                 <li class="list-inline-item">
-                <a href="#" class="btn btn-lg">
+                <a href="https://www.linkedin.com/in/benidic-espinosa-8722a02b1/" class="btn btn-lg">
                   <i class="bi bi-linkedin" aria-hidden="true"></i>
                 </a>
                 </li>

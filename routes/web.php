@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ContactController;
 
 /*
@@ -18,9 +19,10 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', function(){
-    return view('home');
+    return view('portfolio.home');
 })->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/resume', [ResumeController::class, 'index'])->name('resume');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Auth::routes();

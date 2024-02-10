@@ -1,4 +1,4 @@
-@extends('layouts.web')
+@extends('layouts.portfolio')
 
 @section('content')
     <section class="intro-single">
