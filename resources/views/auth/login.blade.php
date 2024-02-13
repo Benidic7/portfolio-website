@@ -105,8 +105,8 @@
                             </span>
                         @enderror
                       </div>
-                      <div class="row">
-                        <div class="col-12">
+                      <div class="row mt-4">
+                        <div class="col-md-6">
                           <div class="icheck-primary">
                             <input type="checkbox" id="remember">
                             <label for="remember">
@@ -115,7 +115,7 @@
                           </div>
                         </div>
                         <!-- /.col -->
-                        <div class="col-12 mt-2">
+                        <div class="col-md-6">
                           <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
                         <!-- /.col -->

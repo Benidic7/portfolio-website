@@ -11,7 +11,9 @@
             <p class="mt-3">Crafting digital experiences one line of code at a time. As a web developer, I bring ideas to life in the virtual realm, turning creativity into clickable reality. Let's build something extraordinary together.</p>
             <div class="row">
               <div class="col-md-4 mt-3">
-                  <a class="btn btn-outline-success">Download CV</a>
+                <a href="{{ route('download.cv') }}" class="btn btn-outline-success">
+                    Download CV
+                </a>
               </div>
             </div>
           </div>

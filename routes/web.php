@@ -28,5 +28,4 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Auth::routes();
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
-
-
+Route::get('/download-cv', [HomeController::class, 'downloadCV'])->name('download.cv');

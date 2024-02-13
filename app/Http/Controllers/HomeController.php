@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('admin.admin');
     }
+
+    public function downloadCV()
+    {
+        $filePath = public_path('cv/benidic_cv.pdf');
+
+        return response()->download($filePath, 'benidic_cv.pdf');
+    }
+
 }

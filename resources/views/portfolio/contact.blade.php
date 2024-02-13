@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">Contact Me</h1>
+              <h1 class="title-single">Contact <span class="color-b">Me</span></h1>
             </div>
           </div>
           <div class="row mt-4">
@@ -57,7 +57,7 @@
                     <div class="socials-footer">
                       <ul class="list-inline">
                           <li class="list-inline-item">
-                          <a href="#" class="link-one">
+                          <a href="https://web.facebook.com/benidic.espinosa" class="link-one">
                               <i class="bi bi-facebook" aria-hidden="true"></i>
                           </a>
                           </li>
@@ -67,12 +67,12 @@
                           </a>
                           </li>
                           <li class="list-inline-item">
-                          <a href="#" class="link-one">
+                          <a href="https://www.instagram.com/bedicasonipse/" class="link-one">
                               <i class="bi bi-instagram" aria-hidden="true"></i>
                           </a>
                           </li>
                           <li class="list-inline-item">
-                          <a href="#" class="link-one">
+                          <a href="https://www.linkedin.com/in/benidic-espinosa-8722a02b1/" class="link-one">
                               <i class="bi bi-linkedin" aria-hidden="true"></i>
                           </a>
                           </li>

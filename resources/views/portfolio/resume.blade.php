@@ -50,12 +50,12 @@
             </ul>
           </div>
           <div class="resume-item">
-            <h4>Graphic design specialist</h4>
-            <h5>2017 - 2018</h5>
-            <p><em>Stepping Stone Advertising, New York, NY</em></p>
+            <h4>Capstone Programmer</h4>
+            <h5>2023 - 2024</h5>
+            <p><em>SLSU, Tomas Oppus, Southern Leyte</em></p>
             <ul>
-              <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-              <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+              <li>I developed the Cloud-Based Voting System as my Capstone Project, using CodeIgniter 3 HMVC.</li>
+              <li>Implemented the Cloud-Based Voting System three times within the campus for different elections. </li>
             </ul>
           </div>
         </div>

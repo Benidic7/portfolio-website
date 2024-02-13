@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">About Me</h1>
+              <h1 class="title-single">About <span class="color-b">Me</span></h1>
             </div>
           </div>
         </div>
