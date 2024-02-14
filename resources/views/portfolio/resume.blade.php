@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">Resume</h1>
+            <h2 class="title-single">Resume</h2>
           </div>
         </div>
       </div>

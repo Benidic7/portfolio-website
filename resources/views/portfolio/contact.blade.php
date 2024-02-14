@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">Contact <span class="color-b">Me</span></h1>
+              <h2 class="title-single">Contact <span class="color-b">Me</span></h2>
             </div>
           </div>
           <div class="row mt-4">
@@ -83,7 +83,7 @@
                 </div>
               </div>
             <div class="col-md-7">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form" autocomplete="off">
                 <div class="row">
                 <div class="col-md-6 mb-3">
                     <div class="form-group">
