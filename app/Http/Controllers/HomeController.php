@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+        return view('admin.dashboard');
     }
 
     public function downloadCV()
@@ -31,6 +31,11 @@ class HomeController extends Controller
         $filePath = public_path('cv/benidic_cv.pdf');
 
         return response()->download($filePath, 'benidic_cv.pdf');
+    }
+
+    public function home()
+    {
+        return view('admin.home');
     }
 
 }

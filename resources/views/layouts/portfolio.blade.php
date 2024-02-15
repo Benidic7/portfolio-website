@@ -37,6 +37,7 @@
     li{
         list-style: none;
     }
+
   </style>
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -76,7 +77,7 @@
         </ul>
       </div>
 
-      <a href="{{route('login')}}" class="btn btn-outline-success">
+      <a href="{{ route('login')}}" class="btn btn-outline-success">
         Login
       </a>
 

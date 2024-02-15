@@ -10,4 +10,9 @@ class AboutController extends Controller
     {
         return view('portfolio.about');
     }
+
+    public function about()
+    {
+        return view('admin.about');
+    }
 }

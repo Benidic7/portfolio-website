@@ -10,4 +10,9 @@ class ContactController extends Controller
     {
         return view('portfolio.contact');
     }
+
+    public function contact()
+    {
+        return view('admin.contact');
+    }
 }

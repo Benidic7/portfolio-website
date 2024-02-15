@@ -10,4 +10,9 @@ class ResumeController extends Controller
     {
         return view('portfolio.resume');
     }
+
+    public function resume()
+    {
+        return view('admin.resume');
+    }
 }

@@ -29,3 +29,10 @@ Auth::routes();
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 Route::get('/download-cv', [HomeController::class, 'downloadCV'])->name('download.cv');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/home', [HomeController::class, 'home'])->name('admin.home');
+    Route::get('/about', [AboutController::class, 'about'])->name('admin.about');
+    Route::get('/contact', [ContactController::class, 'contact'])->name('admin.contact');
+    Route::get('/resume', [ResumeController::class, 'resume'])->name('admin.resume');
+});
