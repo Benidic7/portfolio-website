@@ -53,7 +53,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.html">Benidic<span class="color-b"> Espinosa</span></a>
+      <a class="text-brand" style="text-decoration: none;">Benidic<span class="color-b"> Espinosa</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">

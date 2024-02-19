@@ -6,9 +6,9 @@
         <div class="row p-5 mt-3">
           <div class="col-md-6 m-auto py-3" style="padding-left: 120px;">
             <h5>--- Hello</h5>
-            <h1><strong>I'm <span class="color-b">Benidic </span>Espinosa</strong></h1>
-            <h2 class="offset-1"><strong>a <span class="color-b">Web </span>Developer</strong></h2>
-            <p class="mt-3">Crafting digital experiences one line of code at a time. As a web developer, I bring ideas to life in the virtual realm, turning creativity into clickable reality. Let's build something extraordinary together.</p>
+            <h1><strong>I'm <span class="color-b">{{ $home->first_name }} </span>{{ $home->last_name }}</strong></h1>
+            <h2 class="offset-1"><strong>a <span class="color-b"> {{ $home->position }} </span></strong></h2>
+            <p class="mt-3">{{ $home->description }}</p>
             <div class="row">
               <div class="col-md-4 mt-3">
                 <a href="{{ route('download.cv') }}" class="btn btn-outline-success">

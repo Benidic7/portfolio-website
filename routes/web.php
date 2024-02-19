@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +19,28 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function(){
-    return view('portfolio.home');
-})->name('home');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/resume', [ResumeController::class, 'index'])->name('resume');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/', [PortfolioController::class, 'index'])->name('home');
+Route::get('/about', [PortfolioController::class, 'about'])->name('about');
+Route::get('/contact', [PortfolioController::class, 'contact'])->name('contact');
+Route::get('/resume', [PortfolioController::class, 'resume'])->name('resume');
+Route::get('/download-cv', [PortfolioController::class, 'downloadCV'])->name('download.cv');
 
 Auth::routes();
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
-Route::get('/download-cv', [HomeController::class, 'downloadCV'])->name('download.cv');
 
 Route::prefix('admin')->group(function(){
     Route::get('/home', [HomeController::class, 'home'])->name('admin.home');
-    Route::get('/about', [AboutController::class, 'about'])->name('admin.about');
-    Route::get('/contact', [ContactController::class, 'contact'])->name('admin.contact');
-    Route::get('/resume', [ResumeController::class, 'resume'])->name('admin.resume');
+    Route::get('home/create', [HomeController::class, 'create'])->name('home.create');
+    Route::post('home/store', [HomeController::class, 'store'])->name('home.store');
+    Route::get('home/edit/{id}', [HomeController::class, 'edit'])->name('home.edit');
+    Route::put('/home/update/{id}', [HomeController::class, 'update'])->name('home.update');
+    Route::delete('/home/destroy/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+
+    Route::get('/about', [AboutController::class, 'index'])->name('admin.about');
+
+    Route::get('/contact', [ContactController::class, 'index'])->name('admin.contact');
+
+    Route::get('/resume', [ResumeController::class, 'index'])->name('admin.resume');
+
 });

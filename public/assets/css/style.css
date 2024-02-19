@@ -563,6 +563,7 @@ a:hover {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   box-shadow: 1px 2px 15px rgba(100, 100, 100, 0.3);
+  height: 78px;
 }
 .navbar-default .nav-search {
   color: #000000;
@@ -587,7 +588,7 @@ a:hover {
   }
 }
 .navbar-default.navbar-trans .nav-link, .navbar-default.navbar-reduce .nav-link {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #000000;
   font-weight: 600;
   letter-spacing: 0.03em;

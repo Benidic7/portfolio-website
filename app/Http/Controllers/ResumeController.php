@@ -8,11 +8,7 @@ class ResumeController extends Controller
 {
     public function index()
     {
-        return view('portfolio.resume');
+        return view('admin.resume.index');
     }
 
-    public function resume()
-    {
-        return view('admin.resume');
-    }
 }

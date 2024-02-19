@@ -8,11 +8,6 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('portfolio.about');
-    }
-
-    public function about()
-    {
-        return view('admin.about');
+        return view('admin.about.index');
     }
 }

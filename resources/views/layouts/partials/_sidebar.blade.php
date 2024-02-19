@@ -21,10 +21,8 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('admin') }}" class="nav-link">
+            <a href="{{ route('admin') }}" class="nav-link {{ Request::routeIs('admin') ? 'active' : '' }}">
                 <i class="fa-solid fa-table-columns mr-2"></i>
               <p>
                 Dashboard
@@ -32,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.home') }}" class="nav-link">
+            <a href="{{ route('admin.home') }}" class="nav-link {{ Request::routeIs('admin.home') ? 'active' : '' }}">
                 <i class="fa-solid fa-house mr-2"></i>
               <p>
                 Home Page
@@ -40,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.about') }}" class="nav-link">
+            <a href="{{ route('admin.about') }}" class="nav-link {{ Request::routeIs('admin.about') ? 'active' : '' }}">
                 <i class="fa-regular fa-address-card mr-2"></i>
               <p>
                 About Page
@@ -48,7 +46,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.contact') }}" class="nav-link">
+            <a href="{{ route('admin.contact') }}" class="nav-link {{ Request::routeIs('admin.contact') ? 'active' : '' }}">
                 <i class="fa-solid fa-phone mr-2"></i>
               <p>
                 Contact Page
@@ -56,7 +54,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.resume') }}" class="nav-link">
+            <a href="{{ route('admin.resume') }}" class="nav-link {{ Request::routeIs('admin.resume') ? 'active' : '' }}">
                 <i class="fa-solid fa-newspaper mr-2"></i>
               <p>
                 Resume
