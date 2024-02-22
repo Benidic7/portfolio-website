@@ -27,9 +27,9 @@ Route::get('/download-cv', [PortfolioController::class, 'downloadCV'])->name('do
 
 Auth::routes();
 
-Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
+    Route::get('/', [HomeController::class, 'index'])->name('admin');
 
-Route::prefix('admin')->group(function(){
     Route::get('/home', [HomeController::class, 'home'])->name('admin.home');
     Route::get('home/create', [HomeController::class, 'create'])->name('home.create');
     Route::post('home/store', [HomeController::class, 'store'])->name('home.store');
@@ -37,9 +37,9 @@ Route::prefix('admin')->group(function(){
     Route::put('/home/update/{id}', [HomeController::class, 'update'])->name('home.update');
     Route::delete('/home/destroy/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
 
-    Route::get('/about', [AboutController::class, 'index'])->name('admin.about');
+    Route::resource('about', AboutController::class);
 
-    Route::get('/contact', [ContactController::class, 'index'])->name('admin.contact');
+    Route::resource('contact', ContactController::class);
 
     Route::get('/resume', [ResumeController::class, 'index'])->name('admin.resume');
 

@@ -16,6 +16,8 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- ChartJS -->
 <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
@@ -38,6 +40,11 @@
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    $(document).ready(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    });
+
     // Set the file input value if old input exists
     $(document).ready(function() {
         var fileName = '{{ old('cv') }}';
@@ -51,6 +58,11 @@
     $('.custom-file-input').on('change', function () {
         var fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').html(fileName);
+    });
+
+     //Date picker
+    $('#reservationdate').datetimepicker({
+        format: 'L'
     });
 
     $(document).ready(function(){
@@ -102,6 +114,56 @@
             });
         });
     });
+
+  $(document).ready(function(){
+    $('.delete-contact').click(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+            title: "Are you sure to delete this?",
+            text: "You won't be able to rever this!",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+            reverseButtons: true,
+        }).then((result) => {
+            let contactId = $(this).attr('data-id');
+            let origRoute = "{{ route('contact.destroy', 'id') }}";
+            let route = origRoute.replace('id', contactId);
+
+            if(result.isConfirmed){
+                $.ajax({
+                    url: route,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(data){
+                        deleted(data)
+                    },
+                    error: function(xhr, status, error){
+                        console.error('Error deleting info:', error)
+                    }
+                });
+
+                function deleted(data){
+                    Swal.fire({
+                        title: "Delete Success",
+                        icon: "success",
+                        html: data.success,
+                    }).then((result) => {
+                        if(result.isConfirmed){
+                            location.reload();
+                        }
+                    });
+                }
+            }
+        });
+    });
+  });
 
 </script>
 

@@ -6,7 +6,9 @@
     @include('layouts.partials._sidebar')
 
     <div class="content-wrapper">
-        @yield('content')
+        <div class="container-fluid p-3">
+            @yield('content')
+        </div>
     </div>
 
     @include('layouts.partials._footer')

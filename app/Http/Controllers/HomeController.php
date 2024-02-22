@@ -46,14 +46,19 @@ class HomeController extends Controller
             'last_name' => 'required',
             'position' => 'required',
             'description' => 'required|min:30|max:500',
-            'cv' => 'nullable|mimes:pdf|file|max:10240'
+            'cv' => 'nullable|mimes:pdf|file|max:10240',
+            'propic' => 'required|mimes:jpeg,jpg,png'
         ]);
 
         $fileName = null;
 
         if($request->hasFile('cv')){
-            $fileName = $request->cv->getClientOriginalName();;
+            $fileName = $request->cv->getClientOriginalName();
             $request->cv->move(public_path('cv'), $fileName);
+        }
+        if($request->has('propic')){
+            $imgName = $request->propic->getClientOriginalName();
+            $request->propic->move(public_path('images'), $imgName);
         }
 
         Home::create([
@@ -61,10 +66,11 @@ class HomeController extends Controller
             'last_name' => $request->last_name,
             'position' => $request->position,
             'description' => $request->description,
-            'cv' => $fileName
+            'cv' => $fileName,
+            'propic' => $imgName
         ]);
 
-        return redirect()->route('admin.home')->with('success', $request->first_name . '\'s information has been created successfully!');
+        return redirect()->route('admin.home')->with('success', '<b>'. $request->first_name . '\'s </b> information has been created successfully!');
     }
 
     public function edit($id)
@@ -80,7 +86,8 @@ class HomeController extends Controller
             'last_name' => 'required',
             'position' => 'required',
             'description' => 'required|min:30|max:500',
-            'cv' => 'nullable|mimes:pdf|file|max:10240'
+            'cv' => 'nullable|mimes:pdf|file|max:10240',
+            'propic' => 'required|mimes:jpeg,jpg,png'
         ]);
 
         $home = Home::find($id);
@@ -90,15 +97,20 @@ class HomeController extends Controller
             $request->cv->move(public_path('cv'), $fileName);
             $home->cv = $fileName;
         }
+        if($request->has('propic')){
+            $imgName = $request->propic->getClientOriginalName();
+            $request->propic->move(public_path('images'), $imgName);
+            $home->propic = $imgName;
+        }
 
         $home->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'position' => $request->position,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
 
-        return redirect('admin/home')->with('success', $home->first_name . '\'s info has been updated successfully!');
+        return redirect('admin/home')->with('success', '<b>'. $home->first_name . '\'s </b> info has been updated successfully!');
     }
 
     public function destroy($id)

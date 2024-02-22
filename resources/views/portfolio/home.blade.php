@@ -19,7 +19,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5">
-            <img src="assets/img/Picture1.png" alt="" style="width: 300px; height: 300px; border-radius: 50%;">
+            <img src="{{ asset('images/'.$home->propic) }}" alt="" style="width: 300px; height: 300px; border-radius: 50%;">
           </div>
         </div>
         <div class="row">

@@ -2,7 +2,6 @@
 
 @section('content')
 
-<div class="container p-3">
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -50,7 +49,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
+                <div class="row justify-content-center m-3">
                     {{-- <div class="form-group col-md-4">
                         <label>Current File:</label>
                         <input type="text" class="form-control" value="{{ $home->cv }}" readonly>
@@ -65,6 +64,16 @@
                             <span class=text-danger>{{ $message }}</span>
                         @enderror
                     </div>
+                    <div class="form-group col-md-4 offset-2">
+                        <label>Upload Image</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="propic" id="propic">
+                            <label for="propic" class="custom-file-label">{{ $home->propic }}</label>
+                        </div>
+                        @error('propic')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
@@ -72,6 +81,5 @@
             </div>
         </form>
     </div>
-</div>
 
 @endsection

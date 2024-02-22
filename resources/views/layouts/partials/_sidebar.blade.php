@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.home') }}" class="nav-link {{ Request::routeIs('admin.home') ? 'active' : '' }}">
+            <a href="{{ route('admin.home') }}" class="nav-link {{ Request::routeIs('admin.home') || Request::routeIs('home.create') || Request::routeIs('home.edit') ? 'active' : '' }}">
                 <i class="fa-solid fa-house mr-2"></i>
               <p>
                 Home Page
@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.about') }}" class="nav-link {{ Request::routeIs('admin.about') ? 'active' : '' }}">
+            <a href="{{ route('about.index') }}" class="nav-link {{ Request::routeIs('about.index') || Request::routeIs('about.create') || Request::routeIs('about.edit') ? 'active' : '' }}">
                 <i class="fa-regular fa-address-card mr-2"></i>
               <p>
                 About Page
@@ -46,7 +46,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.contact') }}" class="nav-link {{ Request::routeIs('admin.contact') ? 'active' : '' }}">
+            <a href="{{ route('contact.index') }}" class="nav-link {{ Request::routeIs('contact.index') || Request::routeIs('contact.create') || Request::routeIs('contact.edit') ? 'active' : '' }}">
                 <i class="fa-solid fa-phone mr-2"></i>
               <p>
                 Contact Page
@@ -54,7 +54,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.resume') }}" class="nav-link {{ Request::routeIs('admin.resume') ? 'active' : '' }}">
+            <a href="{{ route('admin.resume') }}" class="nav-link {{ Request::routeIs('admin.resume') || Request::routeIs('resume.create') || Request::routeIs('resume.edit') ? 'active' : '' }}">
                 <i class="fa-solid fa-newspaper mr-2"></i>
               <p>
                 Resume

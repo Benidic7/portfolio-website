@@ -21,28 +21,28 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-              <img src="{{asset('assets/img/Picture1.png')}}" class="img-fluid" width="390px">
+              <img src="{{asset('assets/img/'.$about->home->propic)}}" class="img-fluid" width="390px">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-              <h3 class="mb-2">Web Developer</h3>
+              <h3 class="mb-2">{{ $about->home->position }}</h3>
               <p class="fst-italic mb-4">
                 Navigating the digital landscape with Laravel, I specialize in crafting dynamic web solutions that not only meet but exceed expectations.
               </p>
               <div class="row">
                 <div class="col-lg-6">
                   <ul>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>September 02, 2002</span></li>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.benidicespinosa.com</span></li>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>09982634101</span></li>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Southern Leyte, Philippines</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ $formattedDate }}</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>{{ $about->website }}</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ $about->contact->phone }}</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ $about->city }}</span></li>
                   </ul>
                 </div>
                 <div class="col-lg-6">
                   <ul>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSIT</span></li>
-                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>benidicespinosa30@gmail.com</span></li>
-                    <li class="mb-4"><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{ $age }}</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{ $about->degree }}</span></li>
+                    <li class="mb-3"><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{ $about->contact->email }}</span></li>
+                    <li class="mb-4"><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{{ $about->freelance }}</span></li>
                   </ul>
                 </div>
               </div>

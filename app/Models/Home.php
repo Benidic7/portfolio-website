@@ -16,7 +16,12 @@ class Home extends Model
         'last_name',
         'position',
         'description',
-        'cv'
+        'cv',
+        'propic'
     ];
+
+    public function contacts(){
+        return $this->hasMany(Contact::class);
+    }
 
 }

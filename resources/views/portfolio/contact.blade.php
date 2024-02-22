@@ -21,10 +21,10 @@
                   </div>
                   <div class="icon-box-content">
                       <p class="mb-1">Email.
-                      <span class="color-a">benidicespinosa30@gmail.com</span>
+                      <span class="color-a">{{ $contact->email }}</span>
                       </p>
                       <p class="mb-1">Phone.
-                      <span class="color-a">09982634101</span>
+                      <span class="color-a">{{ $contact->phone }}</span>
                       </p>
                   </div>
                 </div>
@@ -39,8 +39,8 @@
                   </div>
                   <div class="icon-box-content">
                       <p class="mb-1">
-                      Jubas, Libagon, Southern Leyte,
-                      <br> 6615
+                      {{ $contact->address }},
+                      <br> {{ $contact->zip_code }}
                       </p>
                   </div>
                   </div>
