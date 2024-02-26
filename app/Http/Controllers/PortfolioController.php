@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Home;
 use App\Models\About;
+use App\Models\Resume;
 use App\Models\Contact;
+use App\Models\Education;
+use App\Models\Experience;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -32,7 +35,13 @@ class PortfolioController extends Controller
 
     public function resume()
     {
-        return view('portfolio.resume');
+        $id = Auth()->user()->id;
+        $home = Home::first();
+        $contact = Contact::first();
+        $resume = Resume::first();
+        $education = Education::where('user_id', $id)->get();
+        $experience = Experience::where('user_id', $id)->get();
+        return view('portfolio.resume', compact('home', 'contact', 'resume', 'education', 'experience'));
     }
 
     public function downloadCV()

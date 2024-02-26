@@ -21,43 +21,42 @@
         <div class="col-lg-6" data-aos="fade-up">
           <h3 class="resume-title">Summary</h3>
           <div class="resume-item pb-0">
-            <h4>Benidic Espinosa</h4>
-            <p><em>Driven intern web developer with a passion for learning, leveraging Laravel skills to build user-friendly websites, continuously improving coding abilities to transform unique ideas into innovative digital experiences.</em></p>
+            <h4>{{ $home->first_name. ' ' .$home->last_name }}</h4>
+            <p><em>{{ $resume->summary }}</em></p>
             <ul>
-              <li>Jubas, Libagon, Southern Leyte</li>
-              <li>09982634101</li>
-              <li>benidicespinosa30@gmail.com</li>
+              <li>{{ $contact->address }}</li>
+              <li>{{ $contact->phone }}</li>
+              <li>{{ $contact->email }}</li>
             </ul>
           </div>
 
           <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>Bachelor of Science in Information Technology</h4>
-            <h5>2020 - 2024</h5>
-            <p><em>Southern Leyte State University, Tomas Oppus, Southern Leyte</em></p>
-            <p>I'm currently studying at Southern Leyte State University - TO Campus where I learned programming and problem solving skills. Through hands-on course projects, I've developed critical thinking abilities to approach development challenges methodically.</p>
-          </div>
+          <h4>Bachelor of Science in Information Technology</h4>
+          @foreach ($education as $item)
+            <div class="resume-item">
+                <p><strong>{{ $item->level }}</strong></p>
+                <div class="ml-3" style="margin-left: 20px;">
+                    <p>{{ $item->school }}</p>
+                    <h5>{{ $item->year }}</h5>
+                    <p><em>{{ $item->address }}</em></p>
+                </div>
+            </div>
+          @endforeach
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
           <h3 class="resume-title">Professional Experience</h3>
-          <div class="resume-item">
-            <h4>INTERN WEB DEVELOPER</h4>
-            <h5>2024 - Present</h5>
-            <p><em>Bagong Bayan, Bato, Leyte </em></p>
-            <ul>
-              <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-              <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h4>Capstone Programmer</h4>
-            <h5>2023 - 2024</h5>
-            <p><em>SLSU, Tomas Oppus, Southern Leyte</em></p>
-            <ul>
-              <li>I developed the Cloud-Based Voting System as my Capstone Project, using CodeIgniter 3 HMVC.</li>
-              <li>Implemented the Cloud-Based Voting System three times within the campus for different elections. </li>
-            </ul>
-          </div>
+          @foreach ($experience as $item)
+            <div class="resume-item">
+                <h4>{{ $item->experience }}</h4>
+                <h5>{{ $item->year }}</h5>
+                <p><em>{{ $item->address }}</em></p>
+                <ul>
+                    @foreach (array_filter(explode('.', $item->description)) as $sentence)
+                        <li>{{ $sentence }}.</li>
+                    @endforeach
+                </ul>
+            </div>
+          @endforeach
         </div>
       </div>
 

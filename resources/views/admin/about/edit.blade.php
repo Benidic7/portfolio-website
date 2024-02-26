@@ -14,15 +14,16 @@
             </div>
         </div>
         <div class="card-body">
-            <form action="{{ route('about.store') }}" method="post">
+            <form action="{{ route('about.update', $about->id) }}" method="post">
                 @csrf
+                @method('put')
                 <input type="hidden" name="hi" value="{{ $home->id }}">
                 <input type="hidden" name="ci" value="{{ $contact->id }}">
                 <div class="row mt-2 mb-3">
                     <div class="form-group col-md-4 offset-1">
                         <label>Birthdate</label>
                         <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" name="birthdate" value="{{ $bdate }}" data-target="#reservationdate" required>
+                            <input type="text" class="form-control datetimepicker-input" name="birthdate" value="{{ $about->birth_date }}" data-target="#reservationdate" required>
                             <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>

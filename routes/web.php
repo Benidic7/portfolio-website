@@ -6,7 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ExperienceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,9 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
 
     Route::resource('contact', ContactController::class);
 
-    Route::get('/resume', [ResumeController::class, 'index'])->name('admin.resume');
+    Route::resource('resume', ResumeController::class);
 
+    Route::resource('education', EducationController::class);
+
+    Route::resource('experience', ExperienceController::class);
 });

@@ -6,17 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Contact extends Model
+class Resume extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
         'home_id',
-        'email',
-        'phone',
-        'address',
-        'zip_code'
+        'summary'
     ];
 
     public function home()
@@ -24,13 +21,8 @@ class Contact extends Model
         return $this->belongsTo(Home::class);
     }
 
-    public function about()
+    public function contact()
     {
-        return $this->hasMany(About::class);
-    }
-
-    public function resume()
-    {
-        return $this->hasMany(Resume::class);
+        return $this->belongsTo(Contact::class);
     }
 }

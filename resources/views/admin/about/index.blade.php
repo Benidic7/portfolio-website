@@ -16,10 +16,18 @@
             </div>
         </div>
         <div class="card-body">
+            @if(session()->has('success'))
+                <div class="alert alert-success alert-dissmisable" role="alert">
+                    {!! session('success') !!}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Birthdate</div>
+                        <label class="col-md-3 col-form-label">Birthdate</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $formattedDate }}" readonly>
                         </div>
@@ -27,7 +35,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Age</div>
+                        <label class="col-md-3 col-form-label">Age</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $age }}" readonly>
                         </div>
@@ -37,7 +45,7 @@
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Website</div>
+                        <label class="col-md-3 col-form-label">Website</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $about->website }}" readonly>
                         </div>
@@ -45,7 +53,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Degree</div>
+                        <label class="col-md-3 col-form-label">Degree</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $about->degree }}" readonly>
                         </div>
@@ -55,7 +63,7 @@
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Phone</div>
+                        <label class="col-md-3 col-form-label">Phone</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $about->contact->phone }}" readonly>
                         </div>
@@ -63,7 +71,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Email</div>
+                        <label class="col-md-3 col-form-label">Email</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $about->contact->email }}" readonly>
                         </div>
@@ -73,7 +81,7 @@
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">City</div>
+                        <label class="col-md-3 col-form-label">City</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $about->city }}" readonly>
                         </div>
@@ -81,15 +89,18 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-3 col-form-label">Freelance</div>
+                        <label class="col-md-3 col-form-label">Freelance</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="{{ $about->freelance }}" readonly>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
+            <div class="row justify-content-between mt-4">
                 <a href="{{ route('about.edit', $about->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                <a href="" class="btn btn-danger about-delete" data-id="{{ $about->id }}">
+                    <i class="fas fa-trash"></i> Delete
+                </a>
             </div>
         </div>
     </div>

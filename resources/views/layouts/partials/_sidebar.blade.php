@@ -1,13 +1,9 @@
-<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
     <a href="index3.html" class="brand-link text-center">
       <span class="brand-text font-weight-light">Portfolio Website</span>
     </a>
 
-    <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{ asset('assets/img/Picture1.png') }}" class="img-circle elevation-2" alt="User Image">
@@ -18,7 +14,6 @@
       </div>
 
 
-      <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
@@ -54,7 +49,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.resume') }}" class="nav-link {{ Request::routeIs('admin.resume') || Request::routeIs('resume.create') || Request::routeIs('resume.edit') ? 'active' : '' }}">
+            <a href="{{ route('resume.index') }}" class="nav-link {{ Request::routeIs('resume.index') || Request::routeIs('resume.create') || Request::routeIs('resume.edit') || Request::routeIs('education.create') || Request::routeIs('education.edit') || Request::routeIs('experience.create') || Request::routeIs('experience.edit') ? 'active' : '' }}">
                 <i class="fa-solid fa-newspaper mr-2"></i>
               <p>
                 Resume
@@ -63,7 +58,5 @@
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>

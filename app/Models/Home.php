@@ -20,8 +20,19 @@ class Home extends Model
         'propic'
     ];
 
-    public function contacts(){
+    public function contacts()
+    {
         return $this->hasMany(Contact::class);
+    }
+
+    public function abouts()
+    {
+        return $this->hasMany(About::class);
+    }
+
+    public function resume()
+    {
+        return $this->hasOne(Resume::class);
     }
 
 }
