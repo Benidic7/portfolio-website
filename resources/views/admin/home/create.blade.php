@@ -70,6 +70,36 @@
                         @enderror
                     </div>
                 </div>
+                <div class="row mt-3">
+                    <div class="form-group col-md-3">
+                        <label for="">Facebook Link</label>
+                        <input type="text" class="form-control" name="facebook" placeholder="Enter Facebook Link" value="{{ old('facebook') }}" required>
+                        @error('facebook')
+                            <span class=text-danger>{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="">Instagram Link</label>
+                        <input type="text" class="form-control" name="instagram" placeholder="Enter Instagram Link" value="{{ old('instagram') }}" required>
+                        @error('instagram')
+                            <span class=text-danger>{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="">LinkedIn Link</label>
+                        <input type="text" class="form-control" name="linkedin" placeholder="Enter LinkedIn Link" value="{{ old('linkedin') }}" required>
+                        @error('linkedin')
+                            <span class=text-danger>{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="">Github Link</label>
+                        <input type="text" class="form-control" name="github" placeholder="Enter Github Link" value="{{ old('github') }}" required>
+                        @error('github')
+                            <span class=text-danger>{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
             </div>
             <div class="card-footer">
                 <input type="submit" class="btn btn-success" value="Add Info">

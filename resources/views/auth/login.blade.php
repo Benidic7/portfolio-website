@@ -69,7 +69,6 @@
             </div> --}}
 
             <div class="login-box">
-                <!-- /.login-logo -->
                 <div class="card card-outline card-primary">
                   <div class="card-header text-center">
                     <a href="#" class="h1" style="text-decoration: none;">Portfolio</a>
@@ -114,21 +113,19 @@
                             </label>
                           </div>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-md-6">
-                          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="col-md-6 mb-3">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
-                        <!-- /.col -->
                       </div>
                     </form>
 
                     <p class="m-3">
-                      <a href="{{route('register')}}" class="text-center">Register new account</a>
+                        @if($user->isEmpty())
+                        <a href="{{route('register')}}" class="text-center">Register new account</a>
+                        @endif
                     </p>
                   </div>
-                  <!-- /.card-body -->
                 </div>
-                <!-- /.card -->
             </div>
         </div>
     </div>

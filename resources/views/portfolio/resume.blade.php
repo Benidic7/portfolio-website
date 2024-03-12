@@ -36,7 +36,7 @@
             <div class="resume-item">
                 <p><strong>{{ $item->level }}</strong></p>
                 <div class="ml-3" style="margin-left: 20px;">
-                    <p>{{ $item->school }}</p>
+                    <h4>{{ $item->school }}</h4>
                     <h5>{{ $item->year }}</h5>
                     <p><em>{{ $item->address }}</em></p>
                 </div>

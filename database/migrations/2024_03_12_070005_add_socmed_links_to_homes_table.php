@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('homes', function (Blueprint $table) {
-            $table->string('propic')->after('cv');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->string('linkedin');
+            $table->string('github');
         });
     }
 
@@ -22,7 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('homes', function (Blueprint $table) {
-            $table->dropColumn('propic');
+            $table->dropColumn('facebook');
+            $table->dropColumn('instagram');
+            $table->dropColumn('linkedin');
+            $table->dropColumn('github');
         });
     }
 };

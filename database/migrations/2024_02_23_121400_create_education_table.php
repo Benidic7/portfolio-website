@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('year');
             $table->string('address');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

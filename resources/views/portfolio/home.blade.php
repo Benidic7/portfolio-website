@@ -27,23 +27,23 @@
             <div class="socials-a">
               <ul class="list-inline">
                 <li class="list-inline-item">
-                <a href="https://web.facebook.com/benidic.espinosa" class="btn color-a btn-lg">
+                <a href="{{ $home->facebook }}" class="btn color-a btn-lg">
                   <i class="bi bi-facebook" aria-hidden="true"></i>
                 </a>
                 </li>
                 <li class="list-inline-item">
-                <a href="#" class="btn btn-lg">
-                  <i class="bi bi-twitter" aria-hidden="true"></i>
-                </a>
+                    <a href="{{ $home->instagram }}" class="btn btn-lg">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                    </a>
                 </li>
                 <li class="list-inline-item">
-                <a href="https://www.instagram.com/bedicasonipse/" class="btn btn-lg">
-                  <i class="bi bi-instagram" aria-hidden="true"></i>
-                </a>
+                    <a href="{{ $home->linkedin }}" class="btn btn-lg">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                    </a>
                 </li>
                 <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/benidic-espinosa-8722a02b1/" class="btn btn-lg">
-                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                <a href="{{ $home->github }}" class="btn btn-lg">
+                  <i class="bi bi-github" aria-hidden="true"></i>
                 </a>
                 </li>
               </ul>

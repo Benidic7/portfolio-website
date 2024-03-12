@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <button type="submit" class="btn bg-purple">Updare</button>
+                    <button type="submit" class="btn bg-purple">Update</button>
                 </div>
             </form>
         </div>

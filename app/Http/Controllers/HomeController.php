@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Home;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,12 @@ class HomeController extends Controller
 
     public function index()
     {
+        $userId = Auth::user()->id;
+        $userName = Auth::user()->name;
+
+        Session::put('USERID', $userId);
+        Session::put('USERNAME', $userName);
+
         return view('admin.dashboard');
     }
 
@@ -47,7 +55,11 @@ class HomeController extends Controller
             'position' => 'required',
             'description' => 'required|min:30|max:500',
             'cv' => 'nullable|mimes:pdf|file|max:10240',
-            'propic' => 'required|mimes:jpeg,jpg,png'
+            'propic' => 'required|mimes:jpeg,jpg,png',
+            'facebook' => 'required|url',
+            'instagram' => 'required|url',
+            'linkedin' => 'required|url',
+            'github' => 'required|url'
         ]);
 
         $fileName = null;
@@ -62,12 +74,17 @@ class HomeController extends Controller
         }
 
         Home::create([
+            'user_id' => Session::get('USERID'),
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'position' => $request->position,
             'description' => $request->description,
             'cv' => $fileName,
-            'propic' => $imgName
+            'propic' => $imgName,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'linkedin' => $request->linkedin,
+            'github' => $request->github
         ]);
 
         return redirect()->route('admin.home')->with('success', '<b>'. $request->first_name . '\'s </b> information has been created successfully!');
@@ -87,7 +104,11 @@ class HomeController extends Controller
             'position' => 'required',
             'description' => 'required|min:30|max:500',
             'cv' => 'nullable|mimes:pdf|file|max:10240',
-            'propic' => 'required|mimes:jpeg,jpg,png'
+            'propic' => 'required|mimes:jpeg,jpg,png',
+            'facebook' => 'required|url',
+            'instagram' => 'required|url',
+            'linkedin' => 'required|url',
+            'github' => 'required|url'
         ]);
 
         $home = Home::find($id);
@@ -108,6 +129,10 @@ class HomeController extends Controller
             'last_name' => $request->last_name,
             'position' => $request->position,
             'description' => $request->description,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'linkedin' => $request->linkedin,
+            'github' => $request->github
         ]);
 
         return redirect('admin/home')->with('success', '<b>'. $home->first_name . '\'s </b> info has been updated successfully!');

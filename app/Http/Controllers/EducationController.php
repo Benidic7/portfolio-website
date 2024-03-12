@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Education;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class EducationController extends Controller
 {
@@ -22,10 +25,10 @@ class EducationController extends Controller
             'address' => 'required',
         ]);
 
-        $name = Auth()->user()->name;
+        $name = Session::get('USERNAME');
 
         Education::create([
-            'user_id' => Auth()->user()->id,
+            'user_id' => Session::get('USERID'),
             'level' => $request->level,
             'school' => $request->school,
             'year' => $request->year,
@@ -37,7 +40,7 @@ class EducationController extends Controller
 
     public function edit(string $id)
     {
-        $education = Education::findOrFail($id);
+        $education = Education::where('id', $id)->get();
         return view('admin.education.edit', compact('education'));
     }
 
@@ -52,10 +55,10 @@ class EducationController extends Controller
             'address' => 'required',
         ]);
 
-        $name = Auth()->user()->name;
+        $name = Session::get('USERNAME');
 
         $education->update([
-            'user_id' => Auth()->user()->id,
+            'user_id' => Session::get('USERID'),
             'level' => $request->level,
             'school' => $request->school,
             'year' => $request->year,

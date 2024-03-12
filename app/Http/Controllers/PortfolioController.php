@@ -35,12 +35,12 @@ class PortfolioController extends Controller
 
     public function resume()
     {
-        $id = Auth()->user()->id;
+        // $id = Auth()->user()->id;
         $home = Home::first();
         $contact = Contact::first();
         $resume = Resume::first();
-        $education = Education::where('user_id', $id)->get();
-        $experience = Experience::where('user_id', $id)->get();
+        $education = Education::get();
+        $experience = Experience::get();
         return view('portfolio.resume', compact('home', 'contact', 'resume', 'education', 'experience'));
     }
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationController;
@@ -48,4 +49,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
     Route::resource('education', EducationController::class);
 
     Route::resource('experience', ExperienceController::class);
+
+    Route::resource('skills', SkillController::class);
 });

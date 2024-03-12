@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Experience;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ExperienceController extends Controller
 {
@@ -22,10 +25,10 @@ class ExperienceController extends Controller
             'description' => 'required'
         ]);
 
-        $name = Auth()->user()->name;
+        $name = Session::get('USERNAME');
 
         Experience::create([
-            'user_id' => Auth()->user()->id,
+            'user_id' => Session::get('USERID'),
             'experience' => $request->experience,
             'year' => $request->year,
             'address' => $request->address,
@@ -54,7 +57,7 @@ class ExperienceController extends Controller
         $name = $experience->user->name;
 
         $experience->update([
-            'user_id' => Auth()->user()->id,
+            'user_id' => Session::get('USERID'),
             'experience' => $request->experience,
             'year' => $request->year,
             'address' => $request->address,

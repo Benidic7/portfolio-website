@@ -12,12 +12,17 @@ class Home extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'user_id',
         'first_name',
         'last_name',
         'position',
         'description',
         'cv',
-        'propic'
+        'propic',
+        'facebook',
+        'instagram',
+        'linkedin',
+        'github'
     ];
 
     public function contacts()

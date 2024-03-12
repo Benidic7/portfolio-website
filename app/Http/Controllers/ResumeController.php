@@ -9,12 +9,14 @@ use App\Models\Education;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ResumeController extends Controller
 {
     public function index()
     {
-        $id = Auth()->user()->id;
+        $id = Auth::user()->id;
         $home = Home::first();
         $contact = Contact::first();
         $resume = Resume::first();
@@ -62,7 +64,7 @@ class ResumeController extends Controller
         ]);
 
         $resume = Resume::findOrFail($id);
-        $name = Auth()->user()->name;
+        $name = Session::get('USERNAME');
 
         $resume->update([
             'hi' => $request->hi,

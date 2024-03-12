@@ -57,25 +57,25 @@
                     <div class="socials-footer">
                       <ul class="list-inline">
                           <li class="list-inline-item">
-                          <a href="https://web.facebook.com/benidic.espinosa" class="link-one">
-                              <i class="bi bi-facebook" aria-hidden="true"></i>
-                          </a>
+                            <a href="{{ $contact->home->facebook }}" class="link-one">
+                                <i class="bi bi-facebook" aria-hidden="true"></i>
+                            </a>
                           </li>
                           <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                              <i class="bi bi-twitter" aria-hidden="true"></i>
-                          </a>
-                          </li>
-                          <li class="list-inline-item">
-                          <a href="https://www.instagram.com/bedicasonipse/" class="link-one">
-                              <i class="bi bi-instagram" aria-hidden="true"></i>
-                          </a>
-                          </li>
-                          <li class="list-inline-item">
-                          <a href="https://www.linkedin.com/in/benidic-espinosa-8722a02b1/" class="link-one">
-                              <i class="bi bi-linkedin" aria-hidden="true"></i>
-                          </a>
-                          </li>
+                            <a href="{{ $contact->home->instagram }}" class="link-one">
+                                <i class="bi bi-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{{ $contact->home->linkedin }}" class="link-one">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{{ $contact->home->github }}" class="link-one">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                            </a>
+                        </li>
                       </ul>
                       </div>
                     </div>

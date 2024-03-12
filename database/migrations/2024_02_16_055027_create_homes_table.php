@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('position');
             $table->text('description');
             $table->string('cv')->nullable();
+            $table->string('propic');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

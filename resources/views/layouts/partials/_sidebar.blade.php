@@ -56,6 +56,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('skills.index') }}" class="nav-link {{ Request::routeIs('skills.index') || Request::routeIs('skills.create') || Request::routeIs('skills.edit') || Request::routeIs('skills.show') ? 'active' : '' }}">
+                <i class="fas fa-code mr-2"></i>
+              <p>
+                Skills
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
