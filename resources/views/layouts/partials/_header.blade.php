@@ -38,5 +38,9 @@
     *{
         font-family: 'Poppins';
     }
+
+    .border-bottom {
+        border-bottom: 1px solid #d2d6de !important
+    }
   </style>
 </head>

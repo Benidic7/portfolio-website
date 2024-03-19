@@ -83,37 +83,50 @@
                 </div>
               </div>
             <div class="col-md-7">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form" autocomplete="off">
+              <form action="forms/contact.php" method="post" autocomplete="off">
+                @csrf
                 <div class="row">
                 <div class="col-md-6 mb-3">
                     <div class="form-group">
-                    <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
+                        <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
+                        @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <div class="form-group">
-                    <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
+                        <input type="email" name="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-12 mb-3">
                     <div class="form-group">
-                    <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
+                        <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
+                        @error('subject')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                    <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
+                        <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
+                        @error('message')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
-                <div class="col-md-12 my-3">
+                {{-- <div class="col-md-12 my-3">
                   <div class="mb-3">
                     <div class="loading">Loading</div>
                     <div class="error-message"></div>
                     <div class="sent-message">Your message has been sent. Thank you!</div>
                   </div>
-                </div>
+                </div> --}}
 
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center mt-4">
                     <button type="submit" class="btn btn-a">Send Message</button>
                 </div>
                 </div>

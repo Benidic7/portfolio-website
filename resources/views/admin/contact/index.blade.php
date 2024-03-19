@@ -2,61 +2,76 @@
 
 @section('content')
 
-    <div class="card">
-        <div class="card-header">
-            <div class="row">
-                <div class="col-md-10">
-                    <h3>Contact Page Info</h3>
-                </div>
-                <div class="col-md-2">
-                    <a href="{{ route('contact.create') }}" class="btn btn-primary float-right">Create Contact</a>
+    <div class="row mt-3 justify-content-center">
+        <div class="card col-md-10 px-0">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-10">
+                        <h3>Contact Page Info</h3>
+                    </div>
+                    @if(empty($contact))
+                        <div class="col-md-2">
+                            <a href="{{ route('contact.create') }}" class="btn btn-primary float-right">Create Contact</a>
+                        </div>
+                    @endif
                 </div>
             </div>
-        </div>
-        <div class="card-body">
-            @if(session()->has('success'))
-                <div class="alert alert-success alert-dissmisable fade-show" role="alert">
-                    {!! session('success') !!}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            @if($contact)
+                <div class="card-body">
+                    @if(session()->has('success'))
+                        <div class="alert alert-success alert-dissmisable fade-show" role="alert">
+                            {!! session('success') !!}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    <div class="row my-3 justify-content-around">
+                        <div class="form-group col-md-4">
+                            <label for="">Email:</label>
+                            <input type="email" class="form-control bg-transparent border-0 border-bottom" name="email" value="{{ $contact->email }}" readonly>
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Phone:</label>
+                            <input type="number" class="form-control bg-transparent border-0 border-bottom" name="phone" value="{{ $contact->phone }}" readonly>
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 justify-content-around">
+                        <div class="form-group col-md-4">
+                            <label for="">Address:</label>
+                            <input type="text" class="form-control bg-transparent border-0 border-bottom" name="address" value="{{ $contact->address }}" readonly>
+                            @error('address')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Zip Code:</label>
+                            <input type="number" class="form-control bg-transparent border-0 border-bottom" name="zipcode" value="{{ $contact->zip_code }}" readonly>
+                            @error('zipcode')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row justify-content-between">
+                        <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-warning">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a href="" class="btn btn-danger delete-contact" data-id="{{ $contact->id }}">
+                            <i class="fas fa-trash"></i> Delete
+                        </a>
+                    </div>
                 </div>
             @endif
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Zip Code</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($contact as $item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->home->first_name}}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>{{ $item->phone }}</td>
-                                <td>{{ $item->address }}</td>
-                                <td>{{ $item->zip_code }}</td>
-                                <td>
-                                    <a href="{{ route('contact.edit', $item->id) }}" class="btn btn-sm btn-warning">
-                                        <i class="fas fa-edit text-white"></i>
-                                    </a>
-                                    <a href="" class="btn btn-sm btn-danger delete-contact" data-id="{{ $item->id }}">
-                                        <i class="fas fa-trash text-white"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 

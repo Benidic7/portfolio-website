@@ -2008,3 +2008,8 @@ footer .credits {
     background: #fff;
     border: 2px solid #1f5297;
   }
+
+  .bg-image {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+}

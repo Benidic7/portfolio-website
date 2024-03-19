@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Home;
 use App\Models\About;
+use App\Models\Skill;
 use App\Models\Resume;
 use App\Models\Contact;
 use App\Models\Education;
@@ -23,8 +24,9 @@ class PortfolioController extends Controller
     public function about()
     {
         $about = About::with(['contact', 'home'])->first();
+        $skills = Skill::all();
         [$formattedDate, $age] = $this->dates($about);
-        return view('portfolio.about', compact('about', 'formattedDate', 'age'));
+        return view('portfolio.about', compact('about', 'skills', 'formattedDate', 'age'));
     }
 
     public function contact()
@@ -42,6 +44,11 @@ class PortfolioController extends Controller
         $education = Education::get();
         $experience = Experience::get();
         return view('portfolio.resume', compact('home', 'contact', 'resume', 'education', 'experience'));
+    }
+
+    public function blog()
+    {
+        return view('portfolio.blogs');
     }
 
     public function downloadCV()

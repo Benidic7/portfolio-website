@@ -9,7 +9,7 @@
                     <h3>Editing About Info</h3>
                 </div>
                 <div class="col-md-1">
-                    <a href="{{ route('about.index') }}" class="btn btn-info">Cancel</a>
+                    <a href="{{ route('about.index') }}" class="btn btn-secondary">Cancel</a>
                 </div>
             </div>
         </div>

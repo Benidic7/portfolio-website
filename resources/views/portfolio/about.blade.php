@@ -21,7 +21,7 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-              <img src="{{asset('assets/img/'.$about->home->propic)}}" class="img-fluid" width="390px">
+              <img src="{{ asset('images/'.$about->home->propic) }}" class="img-fluid" width="390px">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
               <h3 class="mb-2">{{ $about->home->position }}</h3>
@@ -47,7 +47,7 @@
                 </div>
               </div>
               <p>
-                I’m Benidic Espinosa a BSIT student in Southern Leyte State University - Tomas Oppus Campus. I am hoping to become a programmer someday, I’m a hardworking student that aims to improve my knowledge and skills in programming each day.
+                I’m Benidic Espinosa a BSIT student in Southern Leyte State University - Tomas Oppus Campus. I am aiming to become a programmer someday, I’m a hardworking student that aims to improve my knowledge and skills in programming each day.
               </p>
             </div>
           </div>
@@ -59,59 +59,23 @@
 
           <div class="section-title">
             <h2>Skills</h2>
-            <p>I continuously expand my skills and thrive when presented with complex development challenges. My passion is crafting robust, scalable, and visually appealing web applications that provide seamless user experiences. I'm excited to join a team where I can collaborate and continue growing as a developer while using my full-stack abilities to bring innovative ideas to life.</p>
+            <p>{{ $skills->first()->description }}</p>
           </div>
 
           <div class="row skills-content">
 
             <div class="col-lg-6" data-aos="fade-up">
-
-              <div class="progress">
-                <span class="skill">HTML <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">CSS <i class="val">65%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">JavaScript <i class="val">50%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-              <div class="progress">
-                <span class="skill">PHP <i class="val">70%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">Laravel <i class="val">50%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">CodeIgniter <i class="val">70%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
+                @foreach ($skills as $skill)
+                    @if ($loop->iteration % 3 == 1 && $loop->iteration != 1)
+                        </div><div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    @endif
+                    <div class="progress">
+                        <span class="skill">{{ $skill->skills }} <i class="val">{{ $skill->percentage }}%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $skill->percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
           </div>

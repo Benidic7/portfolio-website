@@ -6,10 +6,10 @@
     <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('assets/img/Picture1.png') }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('images/'. Auth::user()->homes->first()->propic) }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ config('app.name', 'Benidic Espinosa') }}</a>
+          <a href="#" class="d-block">{{ Session::get('USERNAME') }}</a>
         </div>
       </div>
 

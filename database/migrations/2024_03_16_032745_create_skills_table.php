@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('skills');
-            $table->decimal('percentage', 5,2);
+            $table->integer('percentage');
             $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -26,6 +26,7 @@ Route::get('/', [PortfolioController::class, 'index'])->name('home');
 Route::get('/about', [PortfolioController::class, 'about'])->name('about');
 Route::get('/contact', [PortfolioController::class, 'contact'])->name('contact');
 Route::get('/resume', [PortfolioController::class, 'resume'])->name('resume');
+Route::get('/blog', [PortfolioController::class, 'blog'])->name('blog');
 Route::get('/download-cv', [PortfolioController::class, 'downloadCV'])->name('download.cv');
 
 Auth::routes();

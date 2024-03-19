@@ -2,29 +2,26 @@
     $(document).ready(function () {
         //Initialize Select2 Elements
         $('.select2').select2()
-    });
 
-    // Set the file input value if old input exists
-    $(document).ready(function() {
+
+        // Set the file input value if old input exists
         var fileName = '{{ old('cv') }}';
         if (fileName) {
             $('.custom-file-input').val(fileName);
             $('.custom-file-label').html(fileName);
         }
-    });
 
-    // Update the label text when a file is selected
-    $('.custom-file-input').on('change', function () {
-        var fileName = $(this).val().split('\\').pop();
-        $(this).next('.custom-file-label').html(fileName);
-    });
+        // Update the label text when a file is selected
+        $('.custom-file-input').on('change', function () {
+            var fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').html(fileName);
+        });
 
-     //Date picker
-    $('#reservationdate').datetimepicker({
-        format: 'L'
-    });
+        //Date picker
+        $('#reservationdate').datetimepicker({
+            format: 'L'
+        });
 
-    $(document).ready(function(){
         $('.delete-btn').click(function(e){
             e.preventDefault();
 
@@ -33,8 +30,8 @@
                 text: "You won't be able to revert this!",
                 icon: "question",
                 showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
                 confirmButtonText: "Yes, delete it!",
                 reverseButtons: true,
             }).then((result) => {
@@ -72,9 +69,7 @@
                 }
             });
         });
-    });
 
-    $(document).ready(function(){
         $('.delete-contact').click(function(e){
             e.preventDefault();
 
@@ -83,8 +78,8 @@
                 text: "You won't be able to rever this!",
                 icon: "question",
                 showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
                 confirmButtonText: "Yes, delete it!",
                 reverseButtons: true,
             }).then((result) => {
@@ -122,9 +117,7 @@
                 }
             });
         });
-    });
 
-    $(document).ready(function(){
         $('.about-delete').click(function(e){
             e.preventDefault();
 
@@ -134,8 +127,8 @@
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: "Yes, delete it!",
-                cancelButtonColor: "#d33",
-                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#3085d6",
+                confirmButtonColor: "#d33",
                 reverseButtons: true
             }).then((result) => {
                 if(result.isConfirmed){
@@ -172,9 +165,7 @@
                 }
             });
         });
-    });
 
-    $(document).ready(function(){
         $('.delete-resume').click(function(e){
             e.preventDefault();
 
@@ -184,6 +175,8 @@
                 text: "You won't be able to revert this!",
                 showCancelButton: true,
                 confirmButtonText: "Yes, delete it!",
+                cancelButtonColor: "#3085d6",
+                confirmButtonColor: "#d33",
                 reverseButtons: true,
             }).then((result) => {
                 let resumeId = $(this).attr('data-id');
@@ -231,6 +224,8 @@
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: "Yes, delete it!",
+                cancelButtonColor: "#3085d6",
+                confirmButtonColor: "#d33",
                 reverseButtons: true,
             }).then((result) => {
                 let educId = $(this).attr('data-id');
@@ -278,6 +273,8 @@
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: "Yes, delete it!",
+                cancelButtonColor: "#3085d6",
+                confirmButtonColor: "#d33",
                 reverseButtons: true,
             }).then((result) => {
                 let expId = $(this).attr('data-id');
@@ -314,7 +311,51 @@
                 }
             });
         });
-    });
 
+        $('.delete-skills').click(function(e){
+            e.preventDefault();
+
+            Swal.fire({
+                title: "Are you sure you want delete?",
+                text: "You won't be able to revert this!",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonColor: "#3085d6",
+                confirmButtonColor: "#d33",
+                reverseButtons: true,
+            }).then((result) => {
+                let skillId = $(this).data('id');
+                let origUrl = "{{ route('skills.destroy', 'id') }}";
+                let url = origUrl.replace('id', skillId);
+
+                if(result.isConfirmed){
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data){
+                            Swal.fire({
+                                title: "Deleted Success!",
+                                html: data.success,
+                                icon: "success",
+                            }).then((result) => {
+                                if(result.isConfirmed){
+                                    location.reload();
+                                }
+                            });
+                        },
+                        error: function(xhr, status, error){
+                            console.error('Error deleting info:', error);
+                        }
+                    });
+                }
+            });
+        });
+
+    });
 
 </script>

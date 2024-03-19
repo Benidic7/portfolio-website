@@ -40,7 +40,7 @@ class EducationController extends Controller
 
     public function edit(string $id)
     {
-        $education = Education::where('id', $id)->get();
+        $education = Education::where('id', $id)->first();
         return view('admin.education.edit', compact('education'));
     }
 

@@ -31,8 +31,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2">
-                    <div class="form-group col-md-4 offset-2">
+                <div class="row mb-2 justify-content-around">
+                    <div class="form-group col-md-4">
                         <label for="">Email:</label>
                         <input type="email" class="form-control" name="email" value="{{ $contact->email }}" required>
                         @error('email')
@@ -47,8 +47,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="form-group col-md-4 offset-2">
+                <div class="row mb-3 justify-content-center">
+                    <div class="form-group col-md-4">
                         <label for="">Address:</label>
                         <input type="text" class="form-control" name="address" value="{{ $contact->address }}" required>
                         @error('address')

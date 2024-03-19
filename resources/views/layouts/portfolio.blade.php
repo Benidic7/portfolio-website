@@ -67,7 +67,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link {{ Request::routeIs('resume') ? 'active' : '' }}" href="{{route('resume')}}">Resume</a>
+            <a class="nav-link mx-3 {{ Request::routeIs('resume') ? 'active' : '' }}" href="{{route('resume')}}">Resume</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link mx-3 {{ Request::routeIs('blog') ? 'active' : '' }}" href="{{route('blog')}}">Blogs</a>
           </li>
 
           <li class="nav-item">

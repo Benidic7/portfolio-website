@@ -44,7 +44,7 @@
           @endforeach
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="resume-title">Professional Experience</h3>
+          <h3 class="resume-title">Experiences</h3>
           @foreach ($experience as $item)
             <div class="resume-item">
                 <h4>{{ $item->experience }}</h4>

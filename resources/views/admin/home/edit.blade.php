@@ -9,7 +9,7 @@
                     <h4>Editing Information</h4>
                 </div>
                 <div class="col-md-2">
-                    <a href="{{ route('admin.home') }}" class="btn btn-info float-right">Cancel</a>
+                    <a href="{{ route('admin.home') }}" class="btn btn-secondary float-right">Cancel</a>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row justify-content-center m-3">
+                <div class="row justify-content-around m-3">
                     {{-- <div class="form-group col-md-4">
                         <label>Current File:</label>
                         <input type="text" class="form-control" value="{{ $home->cv }}" readonly>
@@ -64,7 +64,7 @@
                             <span class=text-danger>{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="form-group col-md-4 offset-2">
+                    <div class="form-group col-md-4">
                         <label>Upload Image</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="propic" id="propic">

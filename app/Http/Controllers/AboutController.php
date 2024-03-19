@@ -14,7 +14,12 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::first();
-        [$formattedDate, $age] = $this->dates($about);
+        if ($about) {
+            [$formattedDate, $age] = $this->dates($about);
+        } else {
+            $formattedDate = null;
+            $age = null;
+        }
         return view('admin.about.index', compact('about', 'formattedDate', 'age'));
     }
 
