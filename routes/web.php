@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ContactController;
@@ -28,6 +29,7 @@ Route::get('/contact', [PortfolioController::class, 'contact'])->name('contact')
 Route::get('/resume', [PortfolioController::class, 'resume'])->name('resume');
 Route::get('/blog', [PortfolioController::class, 'blog'])->name('blog');
 Route::get('/download-cv', [PortfolioController::class, 'downloadCV'])->name('download.cv');
+Route::post('/contact', [PortfolioController::class, 'send'])->name('contact.send');
 
 Auth::routes();
 
@@ -42,14 +44,11 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
     Route::delete('/home/destroy/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
 
     Route::resource('about', AboutController::class);
-
     Route::resource('contact', ContactController::class);
-
     Route::resource('resume', ResumeController::class);
-
     Route::resource('education', EducationController::class);
-
     Route::resource('experience', ExperienceController::class);
-
     Route::resource('skills', SkillController::class);
+    Route::resource('blog', BlogController::class);
+
 });

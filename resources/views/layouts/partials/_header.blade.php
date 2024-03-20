@@ -33,14 +33,16 @@
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
-
+  {{-- Dropify --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css">
   <style>
     *{
         font-family: 'Poppins';
     }
 
     .border-bottom {
-        border-bottom: 1px solid #d2d6de !important
+        /* border-bottom: 1px solid #d2d6de !important */
+        border-bottom: 1px solid #0d6efd !important;
     }
   </style>
 </head>

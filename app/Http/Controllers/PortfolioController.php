@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Blog;
 use App\Models\Home;
 use App\Models\About;
 use App\Models\Skill;
 use App\Models\Resume;
+use App\Mail\ContactMe;
 use App\Models\Contact;
 use App\Models\Education;
 use App\Models\Experience;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class PortfolioController extends Controller
 {
@@ -48,7 +50,8 @@ class PortfolioController extends Controller
 
     public function blog()
     {
-        return view('portfolio.blogs');
+        $blogs = Blog::all();
+        return view('portfolio.blogs', compact('blogs'));
     }
 
     public function downloadCV()
@@ -67,5 +70,19 @@ class PortfolioController extends Controller
         $age = $carbonDate->age;
 
         return [$formattedDate, $age];
+    }
+
+    public function send()
+    {
+        $data = request()->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+            'subject' => 'required|min:3',
+            'message' => 'required|min:5',
+        ]);
+        Mail::to('benidicespinosa30@gmail.com')->send(new ContactMe($data));
+
+        // dd('sent');
+        return redirect()->back()->with('success', 'Message sent successfully');
     }
 }

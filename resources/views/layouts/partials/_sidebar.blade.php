@@ -64,6 +64,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('blog.index') }}" class="nav-link {{ Request::routeIs('blog.index') || Request::routeIs('blog.create') || Request::routeIs('blog.edit') || Request::routeIs('blog.show') ? 'active' : '' }}">
+                <i class="fas fa-newspaper mr-2"></i>
+              <p>
+                Blogs
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

@@ -83,7 +83,19 @@
                 </div>
               </div>
             <div class="col-md-7">
-              <form action="forms/contact.php" method="post" autocomplete="off">
+                @if (session()->has('success'))
+                    <div class="alert alert-success alert-dismissible d-flex flex-column flex-sm-row justify-content-between align-items-center bg-gray-200 shadow rounded-md py-3 px-4 mb-3 mt-3">
+                        <div class="d-flex align-items-center mb-3 mb-sm-0">
+                            <svg class="bi bi-check-circle-fill text-green-500 mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 0a8 8 0 0 1 8 8 8 8 0 0 1-8 8A8 8 0 0 1 0 8 8 8 0 0 1 8 0zm1.354 5.646a.5.5 0 0 0-.708 0L6.5 9.793 5.354 8.646a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708z"/>
+                            </svg>
+                            <div class="text-sm font-medium">Success!</div>
+                        </div>
+                        <div class="text-sm text-gray-500 mr-3">{{ session('success') }}</div>
+                        <button type="button" class="btn-close btn-close-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+              <form action="{{ route('contact.send') }}" method="post" autocomplete="off">
                 @csrf
                 <div class="row">
                 <div class="col-md-6 mb-3">
@@ -118,13 +130,6 @@
                         @enderror
                     </div>
                 </div>
-                {{-- <div class="col-md-12 my-3">
-                  <div class="mb-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-                </div> --}}
 
                 <div class="col-md-12 text-center mt-4">
                     <button type="submit" class="btn btn-a">Send Message</button>
