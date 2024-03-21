@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="form-group col-md-10">
+                    <div class="form-group col-md-8">
                         <label>Description</label>
                         <textarea class="form-control" rows="4" name="description" required>{{ $home->description }}</textarea>
                         @error('description')

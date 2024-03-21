@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row mt-3 justify-content-center">
-        <div class="card col-md-10">
+        <div class="card col-md-10 px-0">
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-11">
@@ -14,11 +14,11 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <form action="{{ route('education.update', $education->id) }}" method="post">
+            <form action="{{ route('education.update', $education->id) }}" method="post">
+                <div class="card-body">
                     @csrf
                     @method('put')
-                    <div class="row mb-3 justify-content-around">
+                    <div class="row mb-2 justify-content-around">
                         <div class="form-group col-md-4">
                             <label for="">Education Level</label>
                             <select name="level" class="form-control select2" placeholder="Select Education Level">
@@ -52,9 +52,11 @@
                             @enderror
                         </div>
                     </div>
+                </div>
+                <div class="card-footer mt-3">
                     <button type="submit" class="btn bg-purple">Update</button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 

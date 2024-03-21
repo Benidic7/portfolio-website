@@ -11,5 +11,5 @@ Button Text
 </x-mail::button>
 
 Thanks,<br>
-{{ config('app.name') }}
+{{ $data['name'] }}
 </x-mail::message>

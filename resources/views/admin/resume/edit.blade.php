@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row mt-3 justify-content-center">
-        <div class="card col-md-10">
+        <div class="card col-md-10 px-0">
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-11">
@@ -14,8 +14,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <form action="{{ route('resume.update', $resume->id) }}" method="post">
+            <form action="{{ route('resume.update', $resume->id) }}" method="post">
+                <div class="card-body">
                     @csrf
                     @method('put')
                     <input type="hidden" name="hi" value="{{ $resume->home_id }}">
@@ -28,9 +28,11 @@
                             @enderror
                         </div>
                     </div>
+                </div>
+                <div class="card-footer mt-3">
                     <button type="submit" class="btn bg-purple">Update</button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 

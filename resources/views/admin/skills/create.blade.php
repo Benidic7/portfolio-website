@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row mt-3 justify-content-center">
-        <div class="card col-md-10">
+        <div class="card col-md-10 px-0">
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-10">
@@ -16,8 +16,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <form action="{{ route('skills.store') }}" method="post">
+            <form action="{{ route('skills.store') }}" method="post">
+                <div class="card-body">
                     @csrf
                     @if($skill->isEmpty())
                         <div class="row mb-3 justify-content-center">
@@ -43,9 +43,11 @@
                             @enderror
                         </div>
                     </div>
+                </div>
+                <div class="card-footer mt-3">
                     <button type="submit" class="btn bg-purple">Submit</button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 

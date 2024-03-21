@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="card col-md-12 mt-3 px-0">
+    <div class="card col-md-12 px-0">
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="form-group col-md-10 text-center mt-3">
+                    <div class="form-group col-md-8 text-center mt-3">
                         <label>Description</label>
                         <textarea class="form-control bg-transparent border-0 border-bottom" rows="4" name="description" readonly>{{ $home->description }}</textarea>
                     </div>

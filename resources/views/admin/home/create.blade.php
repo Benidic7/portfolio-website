@@ -9,7 +9,7 @@
                     <h4>Creating Information</h4>
                 </div>
                 <div class="col-md-2">
-                    <a href="{{ route('admin.home') }}" class="btn btn-info float-right">Cancel</a>
+                    <a href="{{ route('admin.home') }}" class="btn btn-secondary float-right">Cancel</a>
                 </div>
             </div>
         </div>
@@ -39,8 +39,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2">
-                    <div class="form-group col-md-6 offset-3">
+                <div class="row mb-2 justify-content-center">
+                    <div class="form-group col-md-8">
                         <label>Description</label>
                         <textarea class="form-control" rows="4" name="description" placeholder="Enter Description" required>{{ old('description') }}</textarea>
                         @error('description')
@@ -48,8 +48,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group col-md-4 offset-1">
+                <div class="row justify-content-around">
+                    <div class="form-group col-md-4">
                         <label>Upload CV</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="cv" id="exampleInputFile">
@@ -59,7 +59,7 @@
                             <span class=text-danger>{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="form-group col-md-4 offset-2">
+                    <div class="form-group col-md-4">
                         <label>Upload Image</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="propic" id="propic">

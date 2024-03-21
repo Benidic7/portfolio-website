@@ -83,10 +83,12 @@
                     <div class="row justify-content-center mb-2">
                         <span class="text-center"><strong>Action</strong></span>
                     </div>
-                    <a href="{{ route('education.edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                    <a href="" class="btn btn-danger delete-educ" data-id="{{ $item->id }}">
-                        <i class="fas fa-trash"></i> Delete
-                    </a>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('education.edit', $item->id) }}" class="btn btn-warning mr-1"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="" class="btn btn-danger delete-educ ml-1" data-id="{{ $item->id }}">
+                            <i class="fas fa-trash"></i> Delete
+                        </a>
+                    </div>
                 </div>
             </div>
             <hr>
@@ -132,7 +134,7 @@
                         <div class="row justify-content-center mb-2">
                             <span><strong>Action</strong></span>
                         </div>
-                        <div class="row justify-content-center ">
+                        <div class="row justify-content-center">
                             <a href="{{ route('experience.edit', $item->id) }}" class="btn btn-warning mr-1"><i class="fas fa-edit text-white"></i></a>
                             <a href="" class="btn btn-danger ml-1 delete-exp" data-id="{{ $item->id }}">
                                 <i class="fas fa-trash"></i>
