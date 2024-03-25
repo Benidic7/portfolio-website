@@ -2,8 +2,6 @@
 
 @section('content')
 
-<main id="main">
-
     <section class="intro-single">
       <div class="container">
         <div class="row">
@@ -23,7 +21,7 @@
                     <div class="col-md-4 mb-5">
                         <div class="card card-blog">
                             <div class="card-img">
-                            <a href=""><img src="{{ asset('storage/uploads/'.$blog->image) }}" alt="" class="img-b img-fluid"></a>
+                            <a href="javascript:void(0)"><img src="{{ asset('storage/uploads/'.$blog->image) }}" alt="" class="img-b img-fluid"></a>
                             </div>
                             <div class="card-body">
                             <div class="card-category-box">
@@ -31,7 +29,7 @@
                                 <h6 class="category text-center">{{ $blog->category }}</h6>
                                 </div>
                             </div>
-                            <h3 class="card-titl"><a href="blog-single.html">{{ $blog->title }}</a></h3>
+                            <h3 class="card-titl"><a href="">{{ $blog->title }}</a></h3>
                             <p class="card-description" style="text-align: justify;">
                                 {{ $blog->description }}
                             </p>
@@ -42,7 +40,5 @@
             </div>
         </div>
     </section>
-
-  </main>
 
 @endsection

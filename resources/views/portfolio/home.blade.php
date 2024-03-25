@@ -1,10 +1,11 @@
 @extends('layouts.portfolio')
 
 @section('content')
+
     <section class="section-services section-t8">
         <div class="container">
-            <div class="row p-5 mt-3">
-                <div class="col-md-6 m-auto py-3 text-center">
+            <div class="row p-5 mt-1">
+                <div class="col-md-6 m-auto mt-4 py-3 text-center">
                     <h5>Hello</h5>
                     <h1><strong>I'm <span class="color-b">{{ $home->first_name }} </span>{{ $home->last_name }}</strong></h1>
                     <h2><strong class="color-b">{{ $home->position }}</strong></h2>
@@ -17,16 +18,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mt-1 text-center">
-                    <img src="{{ asset('images/'.$home->propic) }}" alt="" class="rounded-circle" style="max-width: 320px; height: auto;">
+                <div class="col-md-6 mt-0 text-center">
+                    <img src="{{ asset('assets/img/'.$home->propic) }}" class="home-image">
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-md-9 m-auto text-center">
                     <div class="socials-a">
                         <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a href="{{ $home->facebook }}" class="btn color-a btn-lg">
+                            <a href="{{ $home->facebook }}" class="btn btn-lg">
                             <i class="bi bi-facebook" aria-hidden="true"></i>
                             </a>
                         </li>

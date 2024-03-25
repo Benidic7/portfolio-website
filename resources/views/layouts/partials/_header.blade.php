@@ -8,7 +8,7 @@
   <title>{{ config('app.name') }} | {{ ucwords(str_replace('.', ' ', Route::currentRouteName())) }}</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="{{ asset('img/book.png') }}" type="image/x-icon">
+  <link rel="icon" href="{{ asset('assets/img/1061440.png') }}" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   <!-- Font Awesome -->

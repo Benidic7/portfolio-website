@@ -6,12 +6,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>My Portfolio Website</title>
+  <title>{{ config('app.name') }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="{{ asset('assets/img/1061440.png')}}" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -95,20 +95,20 @@
   </main><!-- End #main -->
 
 
-<footer>
-    <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-            <p class="copyright color-text-a">
-                &copy; Copyright
-                <span class="color-a">Benidic Espinosa</span> All Rights Reserved.
-            </p>
-            <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">Benidic Espinosa</a>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="color-text-a">
+                        &copy; Copyright
+                        <span class="color-a">Benidic Espinosa</span> All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6" style="text-align: right;">
+                    Designed by <a href="https://bootstrapmade.com/">Benidic Espinosa</a>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
     </footer><!-- End  Footer -->
 
     <div id="preloader"></div>

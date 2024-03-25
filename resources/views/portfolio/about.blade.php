@@ -21,7 +21,7 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-              <img src="{{ asset('images/'.$about->home->propic) }}" class="img-fluid" width="390px">
+              <img src="{{ asset('assets/img/'.$about->home->propic) }}" class="img-fluid" width="390px">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
               <h3 class="mb-2">{{ $about->home->position }}</h3>

@@ -12,6 +12,7 @@ body {
   font-family: "Poppins" !important;
   font-size: 1.1rem !important;
   color: #555555;
+  height: 100vh;
 }
 
 h1,
@@ -1908,16 +1909,18 @@ a:hover {
 
 footer {
   background: #f3f3f3;
-  text-align: center;
-  padding: 30px 0;
+  text-align: left;
+  padding: 5px 0;
+  padding-top: 16px;
 }
 footer .copyright-footer {
   border-top: 1px solid #ddd;
   padding-top: 20px;
 }
 footer .credits {
-  font-size: 14px;
+  font-size: 16px;
 }
+
 .skills .progress {
   height: 60px;
   display: block;
@@ -1949,7 +1952,7 @@ footer .credits {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #149ddd;
+  background-color: #2eca6a;
 }
 .resume .resume-title {
     font-size: 26px;
@@ -1962,7 +1965,7 @@ footer .credits {
   .resume .resume-item {
     padding: 0 0 20px 20px;
     margin-top: -2px;
-    border-left: 2px solid #1f5297;
+    border-left: 2px solid #2eca6a;
     position: relative;
   }
 
@@ -2006,7 +2009,8 @@ footer .credits {
     left: -9px;
     top: 0;
     background: #fff;
-    border: 2px solid #1f5297;
+    border: 2px solid #2eca6a;
+    /* border: 2px solid #1f5297; * blue color/
   }
 
   .btn-close-sm {
@@ -2035,4 +2039,10 @@ footer .credits {
       transform: scale(1.2);
   }
 
-
+  .home-image {
+    max-width: 360px;
+    height: auto;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+  }
