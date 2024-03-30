@@ -18,7 +18,7 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-lg-6" data-aos="fade-up">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
           <h3 class="resume-title">Summary</h3>
           <div class="resume-item pb-0">
             <h4>{{ $home->first_name. ' ' .$home->last_name }}</h4>

@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($blogs as $blog)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                         <div class="card card-blog">
                             <div class="card-img">
                             <a href="javascript:void(0)"><img src="{{ asset('storage/uploads/'.$blog->image) }}" alt="" class="img-b img-fluid"></a>

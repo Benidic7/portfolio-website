@@ -9,11 +9,11 @@
               <h2 class="title-single">Contact <span class="color-b">Me</span></h2>
             </div>
           </div>
-          <div class="row mt-4">
+          <div class="row mt-4" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="250">
             <div class="col-md-5 section-md-t3">
                 <div class="icon-box section-b2">
                   <div class="icon-box-icon">
-                      <span class="bi bi-envelope"></span>
+                      <span class="bi bi-envelope text-primary"></span>
                   </div>
                   <div class="icon-box-content table-cell">
                   <div class="icon-box-title">
@@ -31,7 +31,7 @@
               </div>
               <div class="icon-box section-b2">
                   <div class="icon-box-icon">
-                  <span class="bi bi-geo-alt"></span>
+                  <span class="bi bi-geo-alt text-primary"></span>
                   </div>
                   <div class="icon-box-content table-cell">
                   <div class="icon-box-title">
@@ -47,7 +47,7 @@
               </div>
               <div class="icon-box">
                   <div class="icon-box-icon">
-                  <span class="bi bi-share"></span>
+                  <span class="bi bi-share text-primary"></span>
                   </div>
                   <div class="icon-box-content table-cell">
                   <div class="icon-box-title">
@@ -57,22 +57,22 @@
                     <div class="socials-footer">
                       <ul class="list-inline">
                           <li class="list-inline-item">
-                            <a href="{{ $contact->home->facebook }}" class="link-one">
+                            <a href="{{ $contact->home->facebook }}" class="link-one mx-2 fs-5">
                                 <i class="bi bi-facebook" aria-hidden="true"></i>
                             </a>
                           </li>
                           <li class="list-inline-item">
-                            <a href="{{ $contact->home->instagram }}" class="link-one">
+                            <a href="{{ $contact->home->instagram }}" class="link-one mx-2 fs-5">
                                 <i class="bi bi-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="{{ $contact->home->linkedin }}" class="link-one">
+                            <a href="{{ $contact->home->linkedin }}" class="link-one mx-2 fs-5">
                                 <i class="bi bi-linkedin" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="{{ $contact->home->github }}" class="link-one">
+                            <a href="{{ $contact->home->github }}" class="link-one mx-2 fs-5">
                                 <i class="bi bi-github" aria-hidden="true"></i>
                             </a>
                         </li>
