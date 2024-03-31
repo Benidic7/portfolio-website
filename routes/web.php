@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ContactController;
@@ -50,5 +51,5 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
     Route::resource('experience', ExperienceController::class);
     Route::resource('skills', SkillController::class);
     Route::resource('blog', BlogController::class);
-
+    Route::resource('email', EmailController::class);
 });

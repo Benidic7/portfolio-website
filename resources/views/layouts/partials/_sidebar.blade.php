@@ -50,7 +50,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('resume.index') }}" class="nav-link {{ Request::routeIs('resume.index') || Request::routeIs('resume.create') || Request::routeIs('resume.edit') || Request::routeIs('education.create') || Request::routeIs('education.edit') || Request::routeIs('experience.create') || Request::routeIs('experience.edit') ? 'active' : '' }}">
-                <i class="fa-solid fa-newspaper mr-2"></i>
+                <i class="fas fa-file-alt mr-2"></i>
               <p>
                 Resume
               </p>
@@ -69,6 +69,14 @@
                 <i class="fas fa-newspaper mr-2"></i>
               <p>
                 Blogs
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('email.index') }}" class="nav-link {{ Request::routeIs('email.index') || Request::routeIs('email.show') ? 'active' : '' }}">
+                <i class="fas fa-envelope mr-2"></i>
+              <p>
+                Emails
               </p>
             </a>
           </li>

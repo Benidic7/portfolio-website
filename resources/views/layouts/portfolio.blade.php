@@ -11,7 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('assets/img/4942902.png')}}" rel="icon">
+  <link href="{{ asset('assets/img/website.png')}}" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -58,27 +58,21 @@
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
-
           <li class="nav-item">
-            <a class="nav-link mx-3 {{ Request::routeIs('home') ? 'active' : '' }}" href="/">Home</a>
+            <a href="#home" class="nav-link mx-3 scrollto active">Home</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link mx-3 {{ Request::routeIs('about') ? 'active' : '' }}" href="{{route('about')}}">About</a>
+            <a href="#about" class="nav-link mx-3 scrollto">About</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link mx-3 {{ Request::routeIs('resume') ? 'active' : '' }}" href="{{route('resume')}}">Resume</a>
+            <a href="#resume" class="nav-link mx-3 scrollto">Resume</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link mx-3 {{ Request::routeIs('blog') ? 'active' : '' }}" href="{{route('blog')}}">Blogs</a>
+            <a href="#blog" class="nav-link mx-3 scrollto">Blogs</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link mx-3 {{ Request::routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}">Contact</a>
+            <a href="#contact" class="nav-link mx-3 scrollto">Contact</a>
           </li>
-
         </ul>
       </div>
 
@@ -142,6 +136,36 @@
         AOS.init();
     </script>
 
+    <script>
+        $(document).ready(function() {
+        const navLinks = $('.nav-link');
+        const sections = $('section[id]');
+
+        function setActiveNavLink() {
+            let fromTop = $(window).scrollTop() + 1;
+
+            sections.each(function() {
+                let section = $(this);
+                if (
+                    section.offset().top <= fromTop &&
+                    section.offset().top + section.outerHeight() > fromTop
+                ) {
+                    navLinks.removeClass('active');
+                    $('.nav-link[href="#' + section.attr('id') + '"]').addClass('active');
+                }
+            });
+
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                navLinks.removeClass('active');
+                $('.nav-link[href="#contact"]').addClass('active');
+            }
+        }
+
+        setActiveNavLink();
+
+        $(window).on('scroll', setActiveNavLink);
+    });
+    </script>
 </body>
 
 </html>

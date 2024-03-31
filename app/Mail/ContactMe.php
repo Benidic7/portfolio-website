@@ -32,7 +32,7 @@ class ContactMe extends Mailable
         $email = $this->data['email'];
         return new Envelope(
             subject: 'Contact Me',
-            from: new Address($email, $name),
+            from: new Address('no-reply@domainname.com', $name),
         );
     }
 

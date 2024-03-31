@@ -6,12 +6,14 @@ use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Home;
 use App\Models\About;
+use App\Models\Email;
 use App\Models\Skill;
 use App\Models\Resume;
 use App\Mail\ContactMe;
 use App\Models\Contact;
 use App\Models\Education;
 use App\Models\Experience;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,7 +22,15 @@ class PortfolioController extends Controller
     public function index()
     {
         $home = Home::first();
-        return view('portfolio.home', compact('home'));
+        $about = About::with(['contact', 'home'])->first();
+        $skills = Skill::all();
+        [$formattedDate, $age] = $this->dates($about);
+        $resume = Resume::first();
+        $education = Education::get();
+        $experience = Experience::get();
+        $blogs = Blog::all();
+        $contact = Contact::first();
+        return view('portfolio.home', compact('home', 'about', 'skills', 'resume', 'education', 'experience', 'formattedDate', 'age', 'contact', 'blogs'));
     }
 
     public function about()
@@ -72,9 +82,9 @@ class PortfolioController extends Controller
         return [$formattedDate, $age];
     }
 
-    public function send()
+    public function send(Request $request)
     {
-        $data = request()->validate([
+        $data = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
             'subject' => 'required|min:3',
@@ -82,7 +92,13 @@ class PortfolioController extends Controller
         ]);
         Mail::to('benidicespinosa30@gmail.com')->send(new ContactMe($data));
 
-        // dd('sent');
-        return redirect()->back()->with('success', 'Message sent successfully');
+        Email::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ]);
+
+        return redirect()->to('#contact')->with('success', 'Message sent successfully');
     }
 }

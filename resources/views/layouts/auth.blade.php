@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ config('app.name', 'Laravel') }} | Login</title>
   <link rel="stylesheet" href="{{ asset('assets/libs/css/styles.min.css') }}" />
+  <link href="{{ asset('assets/img/website.png')}}" rel="icon">
 </head>
 
 <body>
