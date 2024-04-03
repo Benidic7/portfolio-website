@@ -1,9 +1,8 @@
-@include('layouts.partials._header')
+@include('admin.partials._header')
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    @include('layouts.partials._navbar')
-
-    @include('layouts.partials._sidebar')
+    @include('admin.partials._navbar')
+    @include('admin.partials._sidebar')
 
     <div class="content-wrapper">
         <div class="container-fluid p-3">
@@ -11,6 +10,7 @@
         </div>
     </div>
 
-    @include('layouts.partials._footer')
+    @include('admin.partials._footer')
+    @include('admin.partials._scripts')
 </body>
 </html>

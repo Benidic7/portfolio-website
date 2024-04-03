@@ -4,7 +4,10 @@
     {{-- Home --}}
     <section id="home" class="section-services section-t8">
         <div class="container">
-            <div class="row p-5 mt-4">
+            <div class="text-center">
+                <img src="{{ asset('assets/img/moon.png') }}" id="icon" class="toggle">
+            </div>
+            <div class="row p-5 mt-2">
                 <div class="col-md-6 m-auto mt-4 py-3">
                     <h5>Hello</h5>
                     <h1><strong>I'm <span class="color-b">{{ $home->first_name }} </span>{{ $home->last_name }}</strong></h1>
@@ -18,11 +21,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mt-0 text-center" data-aos="flip-right" data-aos-duration="1300" data-aos-delay="80">
+                <div class="col-md-6 mt-0 text-center" data-aos="flip-right" data-aos-duration="1600" data-aos-delay="150">
                     <img src="{{ asset('assets/img/'.$home->propic) }}" class="home-image">
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-4">
                 <div class="col-md-9 m-auto text-center">
                     <div class="socials-a">
                         <ul class="list-inline">
@@ -213,18 +216,18 @@
                     <div class="col-md-4 mb-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                         <div class="card card-blog">
                             <div class="card-img">
-                            <a href="javascript:void(0)"><img src="{{ asset('storage/uploads/'.$blog->image) }}" alt="" class="img-b img-fluid"></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('storage/uploads/'.$blog->image) }}" alt="" class="img-b img-fluid"></a>
                             </div>
                             <div class="card-body">
-                            <div class="card-category-box">
-                                <div class="card-category">
-                                <h6 class="category text-center">{{ $blog->category }}</h6>
+                                <div class="card-category-box">
+                                    <div class="card-category">
+                                    <h6 class="category text-center">{{ $blog->category }}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="card-titl"><a href="">{{ $blog->title }}</a></h3>
-                            <p class="card-description" style="text-align: justify;">
-                                {{ $blog->description }}
-                            </p>
+                                <h3 class="card-title"><a href="" class="white">{{ $blog->title }}</a></h3>
+                                <p class="card-description" style="text-align: justify;">
+                                    {{ $blog->description }}
+                                </p>
                             </div>
                         </div>
                     </div>

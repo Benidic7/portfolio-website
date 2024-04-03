@@ -40,6 +40,3 @@
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
-
-@include('layouts.partials._scripts')
-

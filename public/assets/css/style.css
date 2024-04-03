@@ -13,6 +13,7 @@ body {
   font-size: 1.1rem !important;
   color: #555555;
   height: 100vh;
+  transition: all 0.3s ease-in-out
 }
 
 h1,
@@ -557,7 +558,7 @@ a:hover {
 # Navbar
 --------------------------------------------------------------*/
 .navbar-default {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: #ffffff;
   padding-top: 28px;
   padding-bottom: 28px;
@@ -2047,6 +2048,32 @@ footer .credits {
     outline: none;
     transition: all ease-in-out 0.5s;
     filter: drop-shadow(1px 1px 16px #6495ED);
+    animation: floatImage 4s ease-in-out infinite;
+    --webkit-animation: floatImage 4s ease-in-out infinite;
+  }
+
+  @keyframes floatImage {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+        -webkit-transform: translateY(-2.4rem);
+        -moz-transform: translateY(-2.4rem);
+        -ms-transform: translateY(-2.4rem);
+        -o-transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
   }
 
   .home-image:hover {
@@ -2054,6 +2081,7 @@ footer .credits {
     border-radius: 40px;
     box-shadow: 0px 0 25px 0 rgba(16, 110, 234, 0.1);
     filter: none;
+    animation-play-state: paused;
   }
 
   .img-fluid {
@@ -2077,4 +2105,58 @@ footer .credits {
   .link-one:hover {
     background-color: white;
     color: blue;
+  }
+
+  .light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .dark-mode, .dark-mode footer {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  .dark-mode nav {
+    background-color: #333333;
+  }
+
+  .dark-mode .card-blog {
+    background-color: #333333;
+    border: 1px solid white;
+  }
+
+  .dark-mode h1, .dark-mode h2,
+  .dark-mode h3, .dark-mode h4,
+  .dark-mode h5, .dark-mode h6,
+  .dark-mode .color-a, .dark-mode .skill,
+  .dark-mode .nav-link, .dark-mode .text-brand,
+  .dark-mode .card-body, .dark-mode .white,
+  .dark-mode p {
+    color: #ffffff !important;
+  }
+  .dark-mode .resume-item h5 {
+    background-color: #1e90ff;
+    color: #e4edf9;
+  }
+  .white:hover {
+    color: #1e90ff !important;
+  }
+
+  .dark-mode i {
+    color: #e4edf9;
+  }
+
+  .dark-mode .bi:hover {
+    background-color: transparent;
+    color: blue !important;
+  }
+
+  .dark-mode .btn-lg:hover, .dark-mode .link-one:hover  {
+    background-color: transparent;
+  }
+
+  #icon {
+    width: 30px;
+    cursor: pointer;
   }
