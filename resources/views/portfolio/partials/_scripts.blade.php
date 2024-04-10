@@ -7,7 +7,7 @@
     <!-- Vendor JS Files -->
     <script src="template/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="template/vendor/aos/aos.js"></script>
-    <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
     <script src="template/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="template/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="template/vendor/swiper/swiper-bundle.min.js"></script>

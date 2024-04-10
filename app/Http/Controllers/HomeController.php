@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
-use App\Models\User;
+use App\Models\About;
+use App\Models\Resume;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +37,11 @@ class HomeController extends Controller
         Session::put('USERID', $userId);
         Session::put('USERNAME', $userName);
 
-        return view('admin.dashboard');
+        $home = Home::first();
+        $about = About::first();
+        $contact = Contact::first();
+        $resume = Resume::first();
+        return view('admin.dashboard', compact('home', 'about', 'contact', 'resume'));
     }
 
     public function home()

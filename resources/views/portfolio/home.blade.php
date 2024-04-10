@@ -4,29 +4,29 @@
     {{-- Home --}}
     <section id="home" class="section-services section-t8">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center mt-5 mt-md-0">
                 <img src="{{ asset('assets/img/moon.png') }}" id="icon" class="toggle">
             </div>
-            <div class="row p-5 mt-2">
-                <div class="col-md-6 m-auto mt-4 py-3">
+            <div class="row p-5 mt-0 mt-md-2 px-0 px-md-5">
+                <div class="col-md-6 m-auto mt-0 mt-md-4 py-0 py-md-3">
                     <h5>Hello</h5>
                     <h1><strong>I'm <span class="color-b">{{ $home->first_name }} </span>{{ $home->last_name }}</strong></h1>
                     <h2><strong class="color-b typed" data-typed-items="{{ $home->position }}"></strong></h2>
                     <p class="mt-3">{{ $home->description }}</p>
                     <div class="row">
-                        <div class="col-md-6 offset-md-3 mt-3">
+                        <div class="col-md-6 offset-md-3 my-3">
                             <a href="{{ route('download.cv') }}" class="btn btn-outline-primary btn-block">
                                 Download CV
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mt-0 text-center" data-aos="flip-right" data-aos-duration="1600" data-aos-delay="150">
+                <div class="col-md-6 mt-5 mt-md-0 text-center" data-aos="flip-right" data-aos-duration="1600" data-aos-delay="150">
                     <img src="{{ asset('assets/img/'.$home->propic) }}" class="home-image">
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-md-9 m-auto text-center">
+                <div class="col-md-12 m-auto text-center">
                     <div class="socials-a">
                         <ul class="list-inline">
                         <li class="list-inline-item">

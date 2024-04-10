@@ -45,5 +45,8 @@
         /* border-bottom: 1px solid #d2d6de !important */
         border-bottom: 1px solid #0d6efd !important;
     }
+    .small-box:hover {
+        cursor: pointer !important;
+    }
   </style>
 </head>

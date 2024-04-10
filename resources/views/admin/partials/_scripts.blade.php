@@ -403,6 +403,19 @@
 
         $('#blog-image').dropify();
 
+        $('#homePage').click(function(){
+            window.location.href="{{ route('admin.home') }}";
+        });
+        $('#aboutPage').click(function(){
+            window.location.href="{{ route('about.index') }}";
+        });
+        $('#contactPage').click(function(){
+            window.location.href="{{ route('contact.index') }}";
+        });
+        $('#resumePage').click(function(){
+            window.location.href="{{ route('resume.index') }}";
+        });
+
     });
 
 </script>

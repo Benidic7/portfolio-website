@@ -249,6 +249,7 @@ a:hover {
 /*------/ Space Padding /------*/
 .section-t8 {
   padding-top: 8rem;
+  padding-left: 0 !important;
 }
 @media (max-width: 767px) {
   .section-t8 {
@@ -454,12 +455,16 @@ a:hover {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: #4bd680;
+  background: #000;
   color: #fff;
 }
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
+}
+.dark-mode .back-to-top:hover {
+    background: #000;
+    color: #fff;
 }
 
 /* Prelaoder */
@@ -2050,6 +2055,8 @@ footer .credits {
     filter: drop-shadow(1px 1px 16px #6495ED);
     animation: floatImage 4s ease-in-out infinite;
     --webkit-animation: floatImage 4s ease-in-out infinite;
+    margin-left: auto; /* Aligns the image to the center horizontally */
+    margin-right: auto; /* Aligns the image to the center horizontally */
   }
 
   @keyframes floatImage {
@@ -2142,9 +2149,15 @@ footer .credits {
   .white:hover {
     color: #1e90ff !important;
   }
+  .dark-mode .navbar-toggler span {
+    background-color: #fff;
+  }
+  .dark-mode .navbar-toggler {
+    border: 1px solid #555;
+  }
 
   .dark-mode i {
-    color: #e4edf9;
+    color: #ffffff;
   }
 
   .dark-mode .bi:hover {
