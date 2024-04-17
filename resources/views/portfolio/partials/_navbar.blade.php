@@ -7,9 +7,11 @@
         <span></span>
         <span></span>
       </button>
-      <a class="text-brand" style="text-decoration: none;">Benidic<span class="color-b"> Espinosa</span></a>
+      <a class="text-brand" style="text-decoration: none;">
+        {{ $home->first_name }}<span class="color-b"> {{ $home->last_name }}</span>
+      </a>
 
-      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="#home" class="nav-link mx-3 scrollto active">Home</a>
@@ -29,9 +31,11 @@
         </ul>
       </div>
 
-      <a href="{{ route('login')}}" class="btn btn-outline-primary">
-        Login
-      </a>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault" style="margin-right: 40px;">
+        <a href="{{ route('login')}}" class="btn btn-outline-primary">
+            Login
+        </a>
+      </div>
 
     </div>
   </nav><!-- End Header/Navbar -->

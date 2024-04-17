@@ -15,7 +15,7 @@
                     <p class="mt-3">{{ $home->description }}</p>
                     <div class="row">
                         <div class="col-md-6 offset-md-3 my-3">
-                            <a href="{{ route('download.cv') }}" class="btn btn-outline-primary btn-block">
+                            <a href="{{ route('download.cv') }}" class="btn btn-outline-primary hvr-ripple-out btn-block">
                                 Download CV
                             </a>
                         </div>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content">
                     <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">
-                        <h3 class="mb-2">{{ $about->home->position }}</h3>
+                        <h3 class="mb-2 color-b">{{ $about->home->position }}</h3>
                     </div>
                 <p class="fst-italic mb-4">
                     Navigating the digital landscape with Laravel, I specialize in crafting dynamic web solutions that not only meet but exceed expectations.
@@ -319,7 +319,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="500">
+                    <div class="col-md-7">
                         @if (session()->has('success'))
                             <div class="alert alert-success alert-dismissible d-flex flex-column flex-sm-row justify-content-between align-items-center bg-gray-200 shadow rounded-md py-3 px-4 mb-3 mt-3">
                                 <div class="d-flex align-items-center mb-3 mb-sm-0">
@@ -335,7 +335,7 @@
                         <form action="{{ route('contact.send') }}" method="post" autocomplete="off">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
                                         @error('name')
@@ -343,7 +343,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                                     <div class="form-group">
                                         <input type="email" name="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
                                         @error('email')
@@ -351,7 +351,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
                                     <div class="form-group">
                                         <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
                                         @error('subject')
@@ -359,7 +359,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
                                     <div class="form-group">
                                         <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
                                         @error('message')
