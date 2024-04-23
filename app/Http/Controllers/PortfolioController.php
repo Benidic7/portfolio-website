@@ -12,6 +12,7 @@ use App\Models\Resume;
 use App\Mail\ContactMe;
 use App\Models\Contact;
 use App\Models\Education;
+use App\Models\Portfolio;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,7 +31,8 @@ class PortfolioController extends Controller
         $experience = Experience::get();
         $blogs = Blog::all();
         $contact = Contact::first();
-        return view('portfolio.home', compact('home', 'about', 'skills', 'resume', 'education', 'experience', 'formattedDate', 'age', 'contact', 'blogs'));
+        $portfolio = Portfolio::all();
+        return view('portfolio.home', compact('home', 'about', 'skills', 'resume', 'education', 'experience', 'formattedDate', 'age', 'contact', 'blogs', 'portfolio'));
     }
 
     public function about()
@@ -62,6 +64,13 @@ class PortfolioController extends Controller
     {
         $blogs = Blog::all();
         return view('portfolio.blogs', compact('blogs'));
+    }
+
+    public function portfolio($id)
+    {
+        $home = Home::first();
+        $portfolio = Portfolio::where('id', $id)->get();
+        return view('portfolio.portfolio', compact('home', 'portfolio'));
     }
 
     public function downloadCV()
@@ -99,6 +108,6 @@ class PortfolioController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->to('#contact')->with('success', 'Message sent successfully');
+        return redirect()->to('/#contact')->with('success', 'Message sent successfully');
     }
 }

@@ -12,6 +12,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\PortfoliosController;
+use App\Http\Controllers\PortfolioImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,7 @@ Route::get('/about', [PortfolioController::class, 'about'])->name('about');
 Route::get('/contact', [PortfolioController::class, 'contact'])->name('contact');
 Route::get('/resume', [PortfolioController::class, 'resume'])->name('resume');
 Route::get('/blog', [PortfolioController::class, 'blog'])->name('blog');
+Route::get('/portfolio/{id}', [PortfolioController::class, 'portfolio'])->name('portfolio');
 Route::get('/download-cv', [PortfolioController::class, 'downloadCV'])->name('download.cv');
 Route::post('/contact', [PortfolioController::class, 'send'])->name('contact.send');
 
@@ -51,5 +54,9 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
     Route::resource('experience', ExperienceController::class);
     Route::resource('skills', SkillController::class);
     Route::resource('blog', BlogController::class);
+    Route::resource('portfolio', PortfoliosController::class);
     Route::resource('email', EmailController::class);
+
+    Route::get('porfolio/upload/{id}', [PortfolioImageController::class, 'index'])->name('portfolio.upload');
+    Route::post('porfolio/upload/{id}', [PortfolioImageController::class, 'store'])->name('upload.store');
 });

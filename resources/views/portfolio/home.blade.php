@@ -195,9 +195,70 @@
         </div>
     </section>
 
+    {{-- Portfolio --}}
+    <section id="portfolio" class="intro-single mt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <div class="title-single-box">
+                <h1 class="title-single">Portfolio</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+          <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-app">App</li>
+                <li data-filter=".filter-card">Card</li>
+                <li data-filter=".filter-web">Web</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            {{-- @foreach ($portfolio as $item) --}}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src="{{ asset('storage/uploads/Screenshot_(247)-03-20-2024_07.16.04.png') }}" class="img-portfolio" alt="">
+                <div class="portfolio-links">
+                    <a href="">Title</a>
+                    <a href="">Category</a>
+                </div>
+              </div>
+            </div>
+            {{-- @endforeach --}}
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img src="{{ asset('storage/uploads/Screenshot_(250)-03-20-2024_07.16.44.png') }}" class="img-portfolio" alt="">
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img src="{{ asset('storage/uploads/Screenshot_(255)-03-20-2024_07.17.07.png') }}" class="img-portfolio" alt="">
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
     {{-- Blog --}}
-    <section id="blog" class="intro-single">
+    {{-- <section id="blog" class="intro-single">
         <div class="container">
           <div class="row">
             <div class="col-md-12 col-lg-8">
@@ -234,7 +295,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     {{-- Contact --}}

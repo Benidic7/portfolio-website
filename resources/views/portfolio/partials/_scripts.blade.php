@@ -73,5 +73,26 @@
                 }
                 localStorage.setItem('darkMode', $('body').hasClass('dark-mode'));
             });
+
+            $(".navbar-nav a").on("click", function(e) {
+                var href = $(this).attr("href");
+
+                if (href.startsWith("#")) {
+                    e.preventDefault();
+
+                    if (window.location.pathname.includes('/portfolio')) {
+                        var newUrl = window.location.origin + window.location.pathname.replace('/portfolio', '') + href;
+                    } else {
+                        var newUrl = window.location.origin + window.location.pathname + href;
+                    }
+
+                    window.location.href = newUrl;
+                }
+            });
         });
     </script>
+    @if (session()->has('success'))
+        <script>
+            window.location.href = window.location.href.split('#')[0] + '#contact';
+        </script>
+    @endif

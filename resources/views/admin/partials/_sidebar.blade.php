@@ -66,6 +66,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('portfolio.index') }}" class="nav-link {{ Request::routeIs('portfolio.index') || Request::routeIs('portfolio.create') || Request::routeIs('portfolio.edit') || Request::routeIs('portfolio.show') ||  Request::routeIs('portfolio.upload')? 'active' : '' }}">
+                <i class="fa-solid fa-briefcase mr-2"></i>
+              <p>
+                Portfolios
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('blog.index') }}" class="nav-link {{ Request::routeIs('blog.index') || Request::routeIs('blog.create') || Request::routeIs('blog.edit') || Request::routeIs('blog.show') ? 'active' : '' }}">
                 <i class="fas fa-newspaper mr-2"></i>
               <p>

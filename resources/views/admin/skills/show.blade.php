@@ -21,16 +21,10 @@
                     <div class="form-group col-md-4">
                         <label for="">Skills</label>
                         <input type="text" class="form-control border-0 bg-transparent border-bottom border-info" name="skills" value="{{ $skill->skills }}" readonly>
-                        @error('skills')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Percentage</label>
                         <input type="text" class="form-control border-0 bg-transparent border-bottom border-info" name="percentage" value="{{ $skill->percentage }}%" readonly>
-                        @error('percentage')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
                     </div>
                 </div>
                 @if($skill->description != null)

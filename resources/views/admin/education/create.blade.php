@@ -20,7 +20,7 @@
                     <div class="row mb-2 justify-content-around">
                         <div class="form-group col-md-4">
                             <label for="">Education Level</label>
-                            <select name="level" class="form-control select2" placeholder="Select Education Level">
+                            <select name="level" class="form-control" placeholder="Select Education Level">
                                 <option value="" disabled selected>Select Education Level</option>
                                 <option value="Tertiary" {{ old('level') == 'Tertiary' ? 'selected' : '' }}>Tertiary</option>
                                 <option value="Secondary" {{ old('level') == 'Secondary' ? 'selected' : '' }}>Secondary</option>

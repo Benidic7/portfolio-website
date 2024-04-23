@@ -20,7 +20,7 @@
                           <td class="mailbox-attachment">{{ $email->email }}</td>
                           <td class="mailbox-subject">{!! '<b>' . $email->subject . '</b> - ' . Str::limit($email->message, 30, '...') !!}</td>
                           <td class="mailbox-date">{{ $email->formatted_created_at }}</td>
-                          <td><button class="border-0 bg-transparent delete-email"><i class="fas fa-trash text-dark fa-lg"></i></button></td>
+                          <td><button class="border-0 bg-transparent delete-email"><i class="fa-solid fa-trash-can text-dark fa-lg"></i></button></td>
                         </tr>
                       @endforeach
                     </tbody>

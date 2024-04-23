@@ -23,7 +23,7 @@
             <a href="#resume" class="nav-link mx-3 scrollto">Resume</a>
           </li>
           <li class="nav-item">
-            <a href="#blog" class="nav-link mx-3 scrollto">Blogs</a>
+            <a href="#portfolio" class="nav-link mx-3 scrollto">Portfolio</a>
           </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link mx-3 scrollto">Contact</a>

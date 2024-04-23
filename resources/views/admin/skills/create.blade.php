@@ -17,8 +17,8 @@
                 </div>
             </div>
             <form action="{{ route('skills.store') }}" method="post">
+                @csrf
                 <div class="card-body">
-                    @csrf
                     @if($skill->isEmpty())
                         <div class="row mb-3 justify-content-center">
                             <div class="form-group col-md-6">
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     @endif
-                    <div class="row mb-3 mt-3 justify-content-around">
+                    <div class="row my-3 justify-content-around">
                         <div class="form-group col-md-4">
                             <label for="">Skills</label>
                             <input type="text" class="form-control" name="skills" placeholder="Enter Skills" value="{{ old('skills') }}" required>
