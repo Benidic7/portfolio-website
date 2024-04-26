@@ -67,10 +67,10 @@ class PortfolioController extends Controller
         return view('portfolio.blogs', compact('blogs'));
     }
 
-    public function portfolio($id)
+    public function portfolio($slug)
     {
-        $portfolio = Portfolio::findOrFail($id);
-        $portfolioImages = PortfolioImage::where('portfolio_id', $id)->get();
+        $portfolio = Portfolio::where('slug', $slug)->firstOrFail();
+        $portfolioImages = PortfolioImage::where('portfolio_id', $portfolio->id)->get();
         $home = Home::first();
         return view('portfolio.portfolio', compact('home', 'portfolioImages', 'portfolio'));
     }

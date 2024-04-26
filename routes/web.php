@@ -31,7 +31,7 @@ Route::get('/about', [PortfolioController::class, 'about'])->name('about');
 Route::get('/contact', [PortfolioController::class, 'contact'])->name('contact');
 Route::get('/resume', [PortfolioController::class, 'resume'])->name('resume');
 Route::get('/blog', [PortfolioController::class, 'blog'])->name('blog');
-Route::get('/portfolios/{id}', [PortfolioController::class, 'portfolio'])->name('portfolios.show');
+Route::get('/portfolios/{slug}', [PortfolioController::class, 'portfolio'])->name('portfolios.show');
 Route::get('/download-cv', [PortfolioController::class, 'downloadCV'])->name('download.cv');
 Route::post('/contact', [PortfolioController::class, 'send'])->name('contact.send');
 

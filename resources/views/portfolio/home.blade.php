@@ -234,8 +234,8 @@
                     <img src="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" class="img-portfolio" alt="Placeholder Image">
                 @endif
                 <div class="portfolio-links">
-                    <a href="{{ route('portfolios.show', $portfolio->id) }}" class="fs-3 mb-3" id="title">{{ $portfolio->title }}</a>
-                    <a href="{{ route('portfolios.show', $portfolio->id) }}" class="fs-6">{{ $portfolio->category }}</a>
+                    <a href="{{ route('portfolios.show', $portfolio->slug) }}" class="fs-3 mb-3" id="title">{{ $portfolio->title }}</a>
+                    <a href="{{ route('portfolios.show', $portfolio->slug) }}" class="fs-6">{{ $portfolio->category }}</a>
                 </div>
               </div>
             </div>
