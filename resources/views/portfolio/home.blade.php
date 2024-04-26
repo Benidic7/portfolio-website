@@ -222,37 +222,24 @@
           </div>
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-            {{-- @foreach ($portfolio as $item) --}}
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            @foreach ($portfolios as $portfolio)
+            @php
+                $filter = ['app', 'card', 'web'][rand(0, 2)];
+            @endphp
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $filter }}">
               <div class="portfolio-wrap">
-                <img src="{{ asset('storage/uploads/Screenshot_(247)-03-20-2024_07.16.04.png') }}" class="img-portfolio" alt="">
+                @if ($portfolio->images->isNotEmpty())
+                    <img src="{{ asset('storage/uploads/'.$portfolio->images->first()->image) }}" class="img-portfolio" alt="">
+                @else
+                    <img src="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" class="img-portfolio" alt="Placeholder Image">
+                @endif
                 <div class="portfolio-links">
-                    <a href="">Title</a>
-                    <a href="">Category</a>
+                    <a href="{{ route('portfolios.show', $portfolio->id) }}" class="fs-3 mb-3" id="title">{{ $portfolio->title }}</a>
+                    <a href="{{ route('portfolios.show', $portfolio->id) }}" class="fs-6">{{ $portfolio->category }}</a>
                 </div>
               </div>
             </div>
-            {{-- @endforeach --}}
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="{{ asset('storage/uploads/Screenshot_(250)-03-20-2024_07.16.44.png') }}" class="img-portfolio" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="{{ asset('storage/uploads/Screenshot_(255)-03-20-2024_07.17.07.png') }}" class="img-portfolio" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
     </section>

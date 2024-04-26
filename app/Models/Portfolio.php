@@ -18,4 +18,9 @@ class Portfolio extends Model
         'project_date',
         'project_description'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(PortfolioImage::class);
+    }
 }

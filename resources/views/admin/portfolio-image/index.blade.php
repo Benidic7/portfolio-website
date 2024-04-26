@@ -46,7 +46,7 @@
     <div class="row mt-4">
         <div class="col-md-12 text-center">
             @foreach ($portfolioImages as $portfolioImg)
-                <img src="{{ asset('storage/uploads/'.$portfolioImg->image) }}" class="border p-2 m-3" style="width: 100px; height: 100px;" alt="Img">
+                <img src="{{ asset('storage/uploads/'.$portfolioImg->image) }}" class="border p-2 m-3" style="width: 150px; height: 130px;" alt="Img">
             @endforeach
         </div>
     </div>

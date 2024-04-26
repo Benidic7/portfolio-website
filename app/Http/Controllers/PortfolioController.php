@@ -15,6 +15,7 @@ use App\Models\Education;
 use App\Models\Portfolio;
 use App\Models\Experience;
 use Illuminate\Http\Request;
+use App\Models\PortfolioImage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -31,8 +32,8 @@ class PortfolioController extends Controller
         $experience = Experience::get();
         $blogs = Blog::all();
         $contact = Contact::first();
-        $portfolio = Portfolio::all();
-        return view('portfolio.home', compact('home', 'about', 'skills', 'resume', 'education', 'experience', 'formattedDate', 'age', 'contact', 'blogs', 'portfolio'));
+        $portfolios = Portfolio::all();
+        return view('portfolio.home', compact('home', 'about', 'skills', 'resume', 'education', 'experience', 'formattedDate', 'age', 'contact', 'blogs', 'portfolios'));
     }
 
     public function about()
@@ -68,9 +69,10 @@ class PortfolioController extends Controller
 
     public function portfolio($id)
     {
+        $portfolio = Portfolio::findOrFail($id);
+        $portfolioImages = PortfolioImage::where('portfolio_id', $id)->get();
         $home = Home::first();
-        $portfolio = Portfolio::where('id', $id)->get();
-        return view('portfolio.portfolio', compact('home', 'portfolio'));
+        return view('portfolio.portfolio', compact('home', 'portfolioImages', 'portfolio'));
     }
 
     public function downloadCV()

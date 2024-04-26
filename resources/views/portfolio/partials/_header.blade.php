@@ -209,13 +209,17 @@
     }
 
     .img-portfolio {
-        width: 450px;
+        width: 400px;
         height: 350px;
         border-radius: 6px;
     }
 
     .portfolio-img {
         height: 400px;
+    }
+
+    #title {
+        font-family: 'DM Serif Text', Georgia, 'Times New Roman', serif;
     }
 
   </style>

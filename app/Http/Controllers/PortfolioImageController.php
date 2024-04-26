@@ -19,7 +19,7 @@ class PortfolioImageController extends Controller
     public function store(Request $request, $portfolioId)
     {
         $request->validate([
-            'images.*' => 'required|files|mimes:png,jpg,jpeg,webp'
+            'images.*' => 'required|mimes:png,jpg,jpeg,webp'
         ]);
 
         $portfolio = Portfolio::findOrFail($portfolioId);
