@@ -10,7 +10,7 @@
             <img src="{{ asset('images/'. $user->homes->first()->propic) }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ $user->name }}</a>
+          <a href="javascript:void(0)" class="d-block">{{ $user->name }}</a>
         </div>
       </div>
 
@@ -73,14 +73,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('blog.index') }}" class="nav-link {{ Request::routeIs('blog.index') || Request::routeIs('blog.create') || Request::routeIs('blog.edit') || Request::routeIs('blog.show') ? 'active' : '' }}">
                 <i class="fas fa-newspaper mr-2"></i>
               <p>
                 Blogs
               </p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a href="{{ route('email.index') }}" class="nav-link {{ Request::routeIs('email.index') || Request::routeIs('email.show') ? 'active' : '' }}">
                 <i class="fas fa-envelope mr-2"></i>

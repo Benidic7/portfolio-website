@@ -2056,8 +2056,8 @@ footer .credits {
     filter: drop-shadow(1px 1px 16px #6495ED);
     animation: floatImage 4s ease-in-out infinite;
     --webkit-animation: floatImage 4s ease-in-out infinite;
-    margin-left: auto; /* Aligns the image to the center horizontally */
-    margin-right: auto; /* Aligns the image to the center horizontally */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @keyframes floatImage {

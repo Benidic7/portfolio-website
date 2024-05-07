@@ -29,26 +29,26 @@
                 <div class="col-md-12 m-auto text-center">
                     <div class="socials-a">
                         <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="{{ $home->facebook }}" class="btn btn-lg">
-                            <i class="bi bi-facebook fs-4" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="{{ $home->instagram }}" class="btn btn-lg">
-                            <i class="bi bi-instagram fs-4" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="{{ $home->linkedin }}" class="btn btn-lg">
-                            <i class="bi bi-linkedin fs-4" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="{{ $home->github }}" class="btn btn-lg">
-                            <i class="bi bi-github fs-4" aria-hidden="true"></i>
-                            </a>
-                        </li>
+                            <li class="list-inline-item">
+                                <a href="{{ $home->facebook }}" class="btn btn-lg">
+                                <i class="bi bi-facebook fs-4" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="{{ $home->instagram }}" class="btn btn-lg">
+                                <i class="bi bi-instagram fs-4" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="{{ $home->linkedin }}" class="btn btn-lg">
+                                <i class="bi bi-linkedin fs-4" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="{{ $home->github }}" class="btn btn-lg">
+                                <i class="bi bi-github fs-4" aria-hidden="true"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -222,9 +222,14 @@
           </div>
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            @php
+                $filterOptions = ['app', 'card', 'web'];
+                $currentIndex = 0;
+            @endphp
             @foreach ($portfolios as $portfolio)
             @php
-                $filter = ['app', 'card', 'web'][rand(0, 2)];
+                $filter = $filterOptions[$currentIndex];
+                $currentIndex = ($currentIndex + 1) % count($filterOptions);
             @endphp
             <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $filter }}">
               <div class="portfolio-wrap">

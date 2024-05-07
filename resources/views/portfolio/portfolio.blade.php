@@ -2,7 +2,7 @@
 
 @section('content')
     <section id="portfolio-details" class="portfolio-details mt-5">
-        <div class="container">
+        <div class="container mt-lg-3">
             <a href="#" onclick="goBack()" class="btn btn-primary mt-1">Back</a>
             <div class="row gy-4">
                 <div class="col-lg-6">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="portfolio-description">
                         <h2>Project Description</h2>
-                        <p>{{ $portfolio->project_description }}</p>
+                        <p style="text-align: justify;">{{ $portfolio->project_description }}</p>
                     </div>
                 </div>
             </div>

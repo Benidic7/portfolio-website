@@ -1,7 +1,7 @@
 
   <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
-    <div class="container">
+    <div class="container" style="padding-inline: 12px;">
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -14,7 +14,7 @@
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="/" class="nav-link mx-3 scrollto active">Home</a>
+            <a href="/" class="nav-link mx-3 scrollto">Home</a>
           </li>
           <li class="nav-item">
             <a href="/" class="nav-link mx-3 scrollto">About</a>
@@ -23,7 +23,7 @@
             <a href="/" class="nav-link mx-3 scrollto">Resume</a>
           </li>
           <li class="nav-item">
-            <a href="/" class="nav-link mx-3 scrollto">Portfolio</a>
+            <a href="/" class="nav-link mx-3 scrollto active">Portfolio</a>
           </li>
           <li class="nav-item">
             <a href="/" class="nav-link mx-3 scrollto">Contact</a>
