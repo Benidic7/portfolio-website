@@ -17,11 +17,11 @@ class ContactSeeder extends Seeder
         $homeId = Home::pluck('id', 'first_name');
 
         Contact::create([
-            'home_id' => $homeId['first_name'],
+            'home_id' => 1,
             'email' => 'benidicespinosa30@gmail.com',
             'phone' => '09982634101',
             'address' => 'Jubas, Libagon, Southern Leyte',
-            'zipcode' => '6615',
+            'zip_code' => '6615',
         ]);
     }
 }
