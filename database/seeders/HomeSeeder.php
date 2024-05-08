@@ -24,6 +24,10 @@ class HomeSeeder extends Seeder
             'description' => "Crafting digital experiences one line of code at a time. As a web developer, I bring ideas to life in the virtual realm, turning creativity into clickable reality. Let's build something extraordinary together.",
             'cv' => 'benidic_cv.pdf',
             'propic' => 'benidic.png',
+            'facebook' => 'https://web.facebook.com/benidic.espinosa',
+            'instagram' => 'https://www.instagram.com/bedicasonipse/',
+            'linkedin' => 'https://www.linkedin.com/in/benidic-espinosa-8722a02b1/',
+            'github' => 'https://github.com/Benidic7',
         ]);
     }
 }
