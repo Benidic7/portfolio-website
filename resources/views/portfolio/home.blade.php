@@ -288,6 +288,185 @@
             </div>
         </div>
     </section> --}}
+{{--
+    <section id="blog" class="intro-single">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <div class="title-single-box">
+                <h1 class="title-single">Blog</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="news-grid grid mb-5">
+        <div class="blog-wrap">
+            <div class="container pd-0">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <div class="blog-list">
+                            <ul>
+                                <li>
+                                    <div class="row no-gutters blog-card mb-4">
+                                        <div class="col-lg-4 col-md-12 col-sm-12 px-0">
+                                            <div class="blog-img">
+                                                <img
+                                                    src="vendors/images/img2.jpg"
+                                                    alt=""
+                                                    class="bg_img"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 col-sm-12 pt-3">
+                                            <div class="blog-caption">
+                                                <h4>
+                                                    <a href="#"
+                                                        >Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit</a
+                                                    >
+                                                </h4>
+                                                <div class="blog-by">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore et dolore magna aliqua.
+                                                        Ut enim ad minim veniam, quis nostrud
+                                                        exercitation ullamco laboris nisi ut aliquip
+                                                        ex ea commodo
+                                                    </p>
+                                                    <div class="pt-10">
+                                                        <a href="#" class="btn btn-outline-primary"
+                                                            >Read More</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row no-gutters blog-card mb-4">
+                                        <div class="col-lg-4 col-md-12 col-sm-12 px-0">
+                                            <div class="blog-img">
+                                                <img
+                                                    src="vendors/images/img3.jpg"
+                                                    alt=""
+                                                    class="bg_img"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 col-sm-12 pt-3">
+                                            <div class="blog-caption">
+                                                <h4>
+                                                    <a href="#"
+                                                        >Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit</a
+                                                    >
+                                                </h4>
+                                                <div class="blog-by">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore et dolore magna aliqua.
+                                                        Ut enim ad minim veniam, quis nostrud
+                                                        exercitation ullamco laboris nisi ut aliquip
+                                                        ex ea commodo
+                                                    </p>
+                                                    <div class="pt-10">
+                                                        <a href="#" class="btn btn-outline-primary"
+                                                            >Read More</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row no-gutters blog-card mb-4">
+                                        <div class="col-lg-4 col-md-12 col-sm-12 px-0">
+                                            <div class="blog-img">
+                                                <img
+                                                    src="vendors/images/img4.jpg"
+                                                    alt=""
+                                                    class="bg_img"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 col-sm-12 pt-3">
+                                            <div class="blog-caption">
+                                                <h4>
+                                                    <a href="#"
+                                                        >Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit</a
+                                                    >
+                                                </h4>
+                                                <div class="blog-by">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore et dolore magna aliqua.
+                                                        Ut enim ad minim veniam, quis nostrud
+                                                        exercitation ullamco laboris nisi ut aliquip
+                                                        ex ea commodo
+                                                    </p>
+                                                    <div class="pt-10">
+                                                        <a href="#" class="btn btn-outline-primary"
+                                                            >Read More</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row no-gutters blog-card mb-4">
+                                        <div class="col-lg-4 col-md-12 col-sm-12 px-0">
+                                            <div class="blog-img">
+                                                <img
+                                                    src="vendors/images/img5.jpg"
+                                                    alt=""
+                                                    class="bg_img"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 col-sm-12 pt-3">
+                                            <div class="blog-caption">
+                                                <h4>
+                                                    <a href="#"
+                                                        >Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit</a
+                                                    >
+                                                </h4>
+                                                <div class="blog-by">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore et dolore magna aliqua.
+                                                        Ut enim ad minim veniam, quis nostrud
+                                                        exercitation ullamco laboris nisi ut aliquip
+                                                        ex ea commodo
+                                                    </p>
+                                                    <div class="pt-10">
+                                                        <a href="#" class="btn btn-outline-primary"
+                                                            >Read More</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
 
 
     {{-- Contact --}}
@@ -414,7 +593,7 @@
                                 </div>
                                 <div class="col-md-12" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
                                     <div class="form-group">
-                                        <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
+                                        <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Your Message..." required></textarea>
                                         @error('message')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

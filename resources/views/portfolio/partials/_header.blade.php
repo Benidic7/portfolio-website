@@ -224,6 +224,68 @@
         font-family: 'DM Serif Text', Georgia, 'Times New Roman', serif;
     }
 
+    .dark-mode .form-control {
+        background: transparent;
+        color: white;
+    }
+
+    .dark-mode .form-control::placeholder {
+        color: white;
+    }
+
+    /* Blog Section Styles */
+    .blog-section {
+        padding: 50px 0;
+    }
+
+    .blog-post {
+        margin-bottom: 30px;
+    }
+
+    .blog-post img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .blog-post h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .blog-post p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .blog-post a.btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .bg_img {
+        width: 260px;
+        height: 260px;
+        padding-block: 0;
+    }
+
+    .blog-card {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: 2px;
+    }
+
+
   </style>
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

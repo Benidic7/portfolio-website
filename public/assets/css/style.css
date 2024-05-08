@@ -2175,4 +2175,8 @@ footer .credits {
     cursor: pointer;
   }
 
+  .blog-img {
+    width: 30px;
+  }
+
 
